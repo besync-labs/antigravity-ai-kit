@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": null,
+  
+  "session": {
+    "id": null,
+    "date": null,
+    "focus": null,
+    "status": "new"
+  },
+  
+  "repository": {
+    "currentBranch": null,
+    "lastCommit": null,
+    "remoteSynced": false
+  },
+  
+  "currentTask": null,
+  
+  "openTasks": [],
+  
+  "completedTasks": [],
+  
+  "blockers": [],
+  
+  "notes": "This is a template. Update after each session."
+}

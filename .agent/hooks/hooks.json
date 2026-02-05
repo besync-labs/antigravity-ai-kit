@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Event-driven automation hooks for Antigravity AI Kit",
+  
+  "hooks": [
+    {
+      "name": "session-start",
+      "trigger": "SessionStart",
+      "description": "Load session context at start",
+      "action": "Load session-state.json and rules.md"
+    },
+    {
+      "name": "session-end", 
+      "trigger": "SessionEnd",
+      "description": "Save session state before exit",
+      "action": "Update session-state.json with current context"
+    },
+    {
+      "name": "pre-commit",
+      "trigger": "PreToolUse",
+      "matcher": "tool == 'GitCommit'",
+      "description": "Run verification before commits",
+      "action": "Execute verification-loop skill"
+    },
+    {
+      "name": "secret-detection",
+      "trigger": "PostToolUse",
+      "matcher": "tool == 'Write' && content matches 'sk-|api_key|password'",
+      "description": "Block commits with exposed secrets",
+      "action": "BLOCK and alert"
+    }
+  ]
+}
