@@ -1,12 +1,73 @@
-# Antigravity AI Kit
+# 🚀 Antigravity AI Kit
 
-> **A Trust-Grade AI Development Framework for Antigravity IDE**
+![version](https://img.shields.io/badge/version-1.0.0-blue)
+![license](https://img.shields.io/badge/license-MIT-green)
+![AI Agents](https://img.shields.io/badge/AI%20Agents-10-purple)
+![Skills](https://img.shields.io/badge/Skills-4-orange)
+![Commands](https://img.shields.io/badge/Commands-20-red)
 
-Transform your development workflow with a structured, governance-first approach to AI-assisted coding. Antigravity AI Kit provides a complete ecosystem of agents, commands, and skills designed for professional software engineering teams.
+<p align="center">
+  <b>🎯 Transform Your Terminal into an AI Engineering Team</b>
+</p>
+
+<p align="center">
+  Antigravity AI Kit is a <b>Trust-Grade AI development framework</b> that brings <b>10 specialized agents</b>, <b>20 commands</b>, and <b>4 skills</b> to help you code 10x faster with governance-first principles.
+</p>
+
+<p align="center">
+  🚀 <a href="#-quick-start">Quick Start</a> •
+  🤖 <a href="#-agents-10-core">Agents</a> •
+  🛠️ <a href="#%EF%B8%8F-skills-4-core">Skills</a> •
+  ⌨️ <a href="#%EF%B8%8F-commands-20-core">Commands</a> •
+  ⚖️ <a href="#%EF%B8%8F-operating-constraints-immutable">Governance</a>
+</p>
 
 ---
 
-## ⚡ Quick Start (2 Minutes)
+## 📚 Table of Contents
+
+- [What is Antigravity AI Kit?](#-what-is-antigravity-ai-kit)
+- [Key Features](#-key-features)
+- [Quick Start](#-quick-start)
+- [Architecture](#%EF%B8%8F-architecture-overview)
+- [Agents](#-agents-10-core)
+- [Commands](#%EF%B8%8F-commands-20-core)
+- [Skills](#%EF%B8%8F-skills-4-core)
+- [Governance](#%EF%B8%8F-operating-constraints-immutable)
+- [Extending](#-how-to-extend)
+- [Contributing](#-contributing)
+
+---
+
+## 🤔 What is Antigravity AI Kit?
+
+**Antigravity AI Kit** transforms your IDE into a **virtual engineering team** with:
+
+| Feature          | Count | Description                                              |
+| :--------------- | :---- | :------------------------------------------------------- |
+| 🤖 **AI Agents** | 10    | Specialized roles (Planner, Architect, Reviewer, TDD...) |
+| 🛠️ **Skills**    | 4     | Workflow modules (Verification, Learning, Compact...)    |
+| ⌨️ **Commands**  | 20    | Slash commands for every workflow                        |
+| ⚖️ **Rules**     | 5     | Immutable governance constraints                         |
+| 🔗 **Hooks**     | 4     | Event-driven automation                                  |
+
+---
+
+## ✨ Key Features
+
+- **🔒 Trust-Grade Governance**: `/explore → /plan → /work → /review` — Each iteration builds context
+- **🤖 Multi-Agent System**: 10 specialized agents that collaborate (Planner, Architect, Code Reviewer, TDD Guide...)
+- **📦 Context as Artifact**: Persistent markdown files for plans, specs, and decisions
+- **🔄 Continuous Learning**: PAAL cycle extracts patterns from every session
+- **🛡️ Security First**: Built-in secret detection, vulnerability scanning, and compliance checks
+
+### Core Philosophy
+
+> **"Trust > Optimization. Safety > Growth. Explainability > Performance."**
+
+---
+
+## ⚡ Quick Start
 
 ```bash
 # 1. Clone the repository
@@ -20,25 +81,7 @@ cp -r antigravity-ai-kit/.agent/ your-project/.agent/
 /status
 ```
 
-That's it. The kit is now active and ready to accelerate your development.
-
----
-
-## 🎯 What Makes This Different
-
-| Traditional AI Coding | Antigravity AI Kit         |
-| :-------------------- | :------------------------- |
-| Chat-based, ephemeral | Context-driven, persistent |
-| No governance         | Trust-Grade constraints    |
-| Generic prompts       | Specialized agents         |
-| Ad-hoc commands       | Structured workflows       |
-| Session amnesia       | Continuous learning        |
-
-### Core Philosophy
-
-> **"Trust > Optimization. Safety > Growth. Explainability > Performance."**
-
-This isn't just a collection of prompts. It's an **engineered framework** that enforces professional standards through immutable operating constraints.
+That's it! The kit is now active and ready to accelerate your development.
 
 ---
 
