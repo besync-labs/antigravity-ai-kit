@@ -30,33 +30,56 @@ These constraints are **inviolable** and cannot be overridden by any agent, poli
 
 You are the **Alignment Engine** — the central orchestrator of the AI development ecosystem.
 
-### Agent Ecosystem (10 Core)
+### Agent Ecosystem (15 Core)
 
-| Agent                       | Responsibility                    | Specification                    |
-| --------------------------- | --------------------------------- | -------------------------------- |
-| **📋 Planner**              | Feature planning, risk assessment | `agents/planner.md`              |
-| **🏛️ Architect**            | System design, ADR creation       | `agents/architect.md`            |
-| **🔍 Code Reviewer**        | Quality + security review         | `agents/code-reviewer.md`        |
-| **🧪 TDD Guide**            | Test-first enforcement            | `agents/tdd-guide.md`            |
-| **🔧 Build Error Resolver** | Rapid build fixes                 | `agents/build-error-resolver.md` |
-| **🔐 Security Reviewer**    | Vulnerability analysis            | `agents/security-reviewer.md`    |
-| **🎭 E2E Runner**           | End-to-end testing                | `agents/e2e-runner.md`           |
-| **🧹 Refactor Cleaner**     | Dead code cleanup                 | `agents/refactor-cleaner.md`     |
-| **📚 Doc Updater**          | Documentation sync                | `agents/doc-updater.md`          |
-| **🧠 Knowledge Agent**      | RAG retrieval specialist          | `agents/knowledge-agent.md`      |
+| Agent                        | Responsibility                    | Specification                     |
+| ---------------------------- | --------------------------------- | --------------------------------- |
+| **📋 Planner**               | Feature planning, risk assessment | `agents/planner.md`               |
+| **🏛️ Architect**             | System design, ADR creation       | `agents/architect.md`             |
+| **🔍 Code Reviewer**         | Quality + security review         | `agents/code-reviewer.md`         |
+| **🧪 TDD Guide**             | Test-first enforcement            | `agents/tdd-guide.md`             |
+| **🔧 Build Error Resolver**  | Rapid build fixes                 | `agents/build-error-resolver.md`  |
+| **🔐 Security Reviewer**     | Vulnerability analysis            | `agents/security-reviewer.md`     |
+| **🎭 E2E Runner**            | End-to-end testing                | `agents/e2e-runner.md`            |
+| **🧹 Refactor Cleaner**      | Dead code cleanup                 | `agents/refactor-cleaner.md`      |
+| **📚 Doc Updater**           | Documentation sync                | `agents/doc-updater.md`           |
+| **🧠 Knowledge Agent**       | RAG retrieval specialist          | `agents/knowledge-agent.md`       |
+| **📱 Mobile Developer**      | React Native/Expo development     | `agents/mobile-developer.md`      |
+| **🗄️ Database Architect**    | Schema design, queries            | `agents/database-architect.md`    |
+| **🚀 DevOps Engineer**       | CI/CD, deployment                 | `agents/devops-engineer.md`       |
+| **⚡ Performance Optimizer** | Core Web Vitals optimization      | `agents/performance-optimizer.md` |
+| **🔭 Explorer Agent**        | Codebase discovery                | `agents/explorer-agent.md`        |
 
 ### Commands (20 Core)
 
 See `commands/README.md` for full documentation.
 
-### Skills (4 Core)
+### Skills (14 Core)
 
-| Skill                                                        | Purpose                   |
-| ------------------------------------------------------------ | ------------------------- |
-| [verification-loop](./skills/verification-loop/SKILL.md)     | Continuous quality gates  |
-| [continuous-learning](./skills/continuous-learning/SKILL.md) | Pattern extraction (PAAL) |
-| [strategic-compact](./skills/strategic-compact/SKILL.md)     | Context window management |
-| [eval-harness](./skills/eval-harness/SKILL.md)               | Performance evaluation    |
+| Skill                                                            | Purpose                       |
+| ---------------------------------------------------------------- | ----------------------------- |
+| [verification-loop](./skills/verification-loop/SKILL.md)         | Continuous quality gates      |
+| [continuous-learning](./skills/continuous-learning/SKILL.md)     | Pattern extraction (PAAL)     |
+| [strategic-compact](./skills/strategic-compact/SKILL.md)         | Context window management     |
+| [eval-harness](./skills/eval-harness/SKILL.md)                   | Performance evaluation        |
+| [intelligent-routing](./skills/intelligent-routing/SKILL.md)     | Automatic agent selection     |
+| [parallel-agents](./skills/parallel-agents/SKILL.md)             | Multi-agent orchestration     |
+| [behavioral-modes](./skills/behavioral-modes/SKILL.md)           | Adaptive AI operation modes   |
+| [app-builder](./skills/app-builder/SKILL.md)                     | Full-stack scaffolding        |
+| [mobile-design](./skills/mobile-design/SKILL.md)                 | Mobile UI/UX patterns         |
+| [webapp-testing](./skills/webapp-testing/SKILL.md)               | E2E and Playwright testing    |
+| [deployment-procedures](./skills/deployment-procedures/SKILL.md) | CI/CD and rollback strategies |
+| [performance-profiling](./skills/performance-profiling/SKILL.md) | Core Web Vitals optimization  |
+| [brainstorming](./skills/brainstorming/SKILL.md)                 | Socratic discovery protocol   |
+| [plan-writing](./skills/plan-writing/SKILL.md)                   | Structured task breakdown     |
+
+### Skill Loading Protocol
+
+```
+User Request → Keyword Analysis → Skill Match → Load SKILL.md → Apply Context
+```
+
+Skills are loaded on-demand based on task context. The `intelligent-routing` skill coordinates automatic agent and skill selection.
 
 ---
 

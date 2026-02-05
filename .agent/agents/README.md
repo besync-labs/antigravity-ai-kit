@@ -1,7 +1,7 @@
 # Antigravity AI Kit — Agents
 
 > **Purpose**: Specialized sub-agents for task delegation
-> **Count**: 10 Core Agents
+> **Count**: 15 Core Agents
 
 ---
 
@@ -29,18 +29,46 @@ Agents are specialized personas that handle delegated tasks with focused experti
 
 ### Quality & Security Agents
 
-| Agent                    | File                   | Purpose                |
-| :----------------------- | :--------------------- | :--------------------- |
-| 🔐 **Security Reviewer** | `security-reviewer.md` | Vulnerability analysis |
-| 🎭 **E2E Runner**        | `e2e-runner.md`        | End-to-end testing     |
+| Agent                        | File                       | Purpose                      |
+| :--------------------------- | :------------------------- | :--------------------------- |
+| 🔐 **Security Reviewer**     | `security-reviewer.md`     | Vulnerability analysis       |
+| 🎭 **E2E Runner**            | `e2e-runner.md`            | End-to-end testing           |
+| ⚡ **Performance Optimizer** | `performance-optimizer.md` | Core Web Vitals optimization |
 
-### Maintenance Agents
+### Infrastructure Agents
+
+| Agent                     | File                    | Purpose                       |
+| :------------------------ | :---------------------- | :---------------------------- |
+| 📱 **Mobile Developer**   | `mobile-developer.md`   | React Native/Expo development |
+| 🗄️ **Database Architect** | `database-architect.md` | Schema design, queries        |
+| 🚀 **DevOps Engineer**    | `devops-engineer.md`    | CI/CD, deployment             |
+
+### Maintenance & Discovery Agents
 
 | Agent                   | File                  | Purpose            |
 | :---------------------- | :-------------------- | :----------------- |
 | 🧹 **Refactor Cleaner** | `refactor-cleaner.md` | Dead code cleanup  |
 | 📚 **Doc Updater**      | `doc-updater.md`      | Documentation sync |
 | 🧠 **Knowledge Agent**  | `knowledge-agent.md`  | RAG retrieval      |
+| 🔭 **Explorer Agent**   | `explorer-agent.md`   | Codebase discovery |
+
+---
+
+## Agent Selection Matrix
+
+The `intelligent-routing` skill automatically selects agents based on request keywords:
+
+| Intent       | Keywords                            | Agent(s)                  |
+| ------------ | ----------------------------------- | ------------------------- |
+| Architecture | "design", "structure", "pattern"    | `architect`               |
+| Planning     | "plan", "roadmap", "sprint"         | `planner`                 |
+| Security     | "security", "vulnerability", "auth" | `security-reviewer`       |
+| Testing      | "test", "coverage", "e2e"           | `tdd-guide`, `e2e-runner` |
+| Mobile       | "mobile", "react native", "expo"    | `mobile-developer`        |
+| Database     | "schema", "migration", "query"      | `database-architect`      |
+| Deployment   | "deploy", "CI/CD", "production"     | `devops-engineer`         |
+| Performance  | "slow", "optimize", "performance"   | `performance-optimizer`   |
+| Discovery    | "explore", "map", "understand"      | `explorer-agent`          |
 
 ---
 
