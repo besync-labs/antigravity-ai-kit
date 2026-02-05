@@ -2,16 +2,17 @@
 
 ![version](https://img.shields.io/badge/version-1.0.0-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![AI Agents](https://img.shields.io/badge/AI%20Agents-10-purple)
-![Skills](https://img.shields.io/badge/Skills-4-orange)
+![AI Agents](https://img.shields.io/badge/AI%20Agents-15-purple)
+![Skills](https://img.shields.io/badge/Skills-14-orange)
 ![Commands](https://img.shields.io/badge/Commands-20-red)
+![Workflows](https://img.shields.io/badge/Workflows-8-teal)
 
 <p align="center">
   <b>🎯 Transform Your Terminal into an AI Engineering Team</b>
 </p>
 
 <p align="center">
-  Antigravity AI Kit is a <b>Trust-Grade AI development framework</b> that brings <b>10 specialized agents</b>, <b>20 commands</b>, and <b>4 skills</b> to help you code 10x faster with governance-first principles.
+  Antigravity AI Kit is a <b>Trust-Grade AI development framework</b> that brings <b>15 specialized agents</b>, <b>20 commands</b>, <b>14 skills</b>, and <b>8 workflows</b> to help you code 10x faster with governance-first principles.
 </p>
 
 <p align="center">
@@ -43,20 +44,21 @@
 
 **Antigravity AI Kit** transforms your IDE into a **virtual engineering team** with:
 
-| Feature          | Count | Description                                              |
-| :--------------- | :---- | :------------------------------------------------------- |
-| 🤖 **AI Agents** | 10    | Specialized roles (Planner, Architect, Reviewer, TDD...) |
-| 🛠️ **Skills**    | 4     | Workflow modules (Verification, Learning, Compact...)    |
-| ⌨️ **Commands**  | 20    | Slash commands for every workflow                        |
-| ⚖️ **Rules**     | 5     | Immutable governance constraints                         |
-| 🔗 **Hooks**     | 4     | Event-driven automation                                  |
+| Feature          | Count | Description                                                       |
+| :--------------- | :---- | :---------------------------------------------------------------- |
+| 🤖 **AI Agents** | 15    | Specialized roles (Mobile, DevOps, Database, Performance...)      |
+| 🛠️ **Skills**    | 14    | Workflow modules (Routing, Orchestration, Testing, Deployment...) |
+| ⌨️ **Commands**  | 20    | Slash commands for every workflow                                 |
+| 🔄 **Workflows** | 8     | Process templates (/debug, /deploy, /orchestrate...)              |
+| ⚖️ **Rules**     | 5     | Immutable governance constraints                                  |
+| 🔗 **Hooks**     | 4     | Event-driven automation                                           |
 
 ---
 
 ## ✨ Key Features
 
 - **🔒 Trust-Grade Governance**: `/explore → /plan → /work → /review` — Each iteration builds context
-- **🤖 Multi-Agent System**: 10 specialized agents that collaborate (Planner, Architect, Code Reviewer, TDD Guide...)
+- **🤖 Multi-Agent System**: 15 specialized agents that collaborate (Mobile Developer, DevOps, Database Architect...)
 - **📦 Context as Artifact**: Persistent markdown files for plans, specs, and decisions
 - **🔄 Continuous Learning**: PAAL cycle extracts patterns from every session
 - **🛡️ Security First**: Built-in secret detection, vulnerability scanning, and compliance checks
@@ -116,12 +118,12 @@ That's it! The kit is now active and ready to accelerate your development.
 
 | Component     | Count | Purpose                                   |
 | :------------ | :---- | :---------------------------------------- |
-| **Agents**    | 10    | Specialized sub-agents for delegation     |
+| **Agents**    | 15    | Specialized sub-agents for delegation     |
 | **Commands**  | 20    | Slash commands for quick execution        |
-| **Skills**    | 4     | Workflow definitions and domain knowledge |
+| **Skills**    | 14    | Workflow definitions and domain knowledge |
+| **Workflows** | 8     | Slash command process templates           |
 | **Rules**     | 5     | Always-follow governance guidelines       |
 | **Contexts**  | 3     | Dynamic mode switching                    |
-| **Workflows** | 1     | Development process templates             |
 
 ---
 
@@ -138,9 +140,10 @@ antigravity-ai-kit/
 │   ├── rules.md                # Governance & identity
 │   ├── session-state.json      # State template
 │   │
-│   ├── agents/                 # 10 specialized agents
+│   ├── agents/                 # 15 specialized agents
 │   ├── commands/               # 20 slash commands
-│   ├── skills/                 # 4 capability extensions
+│   ├── skills/                 # 14 capability extensions
+│   ├── workflows/              # 8 slash command workflows
 │   ├── hooks/                  # Event-driven automation
 │   ├── rules/                  # Modular governance
 │   ├── contexts/               # Mode switching
@@ -156,22 +159,27 @@ antigravity-ai-kit/
 
 ---
 
-## 🤖 Agents (10 Core)
+## 🤖 Agents (15 Core)
 
 Agents are specialized sub-agents that handle delegated tasks with focused expertise.
 
-| Agent                       | Purpose                         | When to Use                  |
-| :-------------------------- | :------------------------------ | :--------------------------- |
-| 📋 **Planner**              | Feature implementation planning | Before starting new features |
-| 🏛️ **Architect**            | System design decisions         | For architectural changes    |
-| 🔍 **Code Reviewer**        | Quality & security review       | Before merging code          |
-| 🧪 **TDD Guide**            | Test-driven development         | When writing tests           |
-| 🔐 **Security Reviewer**    | Vulnerability analysis          | For security-sensitive code  |
-| 🔧 **Build Error Resolver** | Rapid build fixes               | When builds fail             |
-| 🎭 **E2E Runner**           | End-to-end testing              | For integration tests        |
-| 🧹 **Refactor Cleaner**     | Dead code cleanup               | During refactoring           |
-| 📚 **Doc Updater**          | Documentation sync              | After code changes           |
-| 🧠 **Knowledge Agent**      | RAG retrieval                   | For context queries          |
+| Agent                        | Purpose                         | When to Use                  |
+| :--------------------------- | :------------------------------ | :--------------------------- |
+| 📋 **Planner**               | Feature implementation planning | Before starting new features |
+| 🏛️ **Architect**             | System design decisions         | For architectural changes    |
+| 🔍 **Code Reviewer**         | Quality & security review       | Before merging code          |
+| 🧪 **TDD Guide**             | Test-driven development         | When writing tests           |
+| 🔐 **Security Reviewer**     | Vulnerability analysis          | For security-sensitive code  |
+| 🔧 **Build Error Resolver**  | Rapid build fixes               | When builds fail             |
+| 🎭 **E2E Runner**            | End-to-end testing              | For integration tests        |
+| 📱 **Mobile Developer**      | React Native/Expo development   | For mobile apps              |
+| 🗄️ **Database Architect**    | Schema design & queries         | For database work            |
+| 🚀 **DevOps Engineer**       | CI/CD & deployment              | For infrastructure           |
+| ⚡ **Performance Optimizer** | Core Web Vitals                 | For performance issues       |
+| 🔭 **Explorer Agent**        | Codebase discovery              | For new codebases            |
+| 🧹 **Refactor Cleaner**      | Dead code cleanup               | During refactoring           |
+| 📚 **Doc Updater**           | Documentation sync              | After code changes           |
+| 🧠 **Knowledge Agent**       | RAG retrieval                   | For context queries          |
 
 ---
 
@@ -230,9 +238,11 @@ Slash commands provide quick execution of common operations.
 
 ---
 
-## 🛠️ Skills (4 Core)
+## 🛠️ Skills (14 Core)
 
 Skills are workflow definitions that extend capabilities.
+
+### Operational Skills
 
 | Skill                   | Purpose                                       |
 | :---------------------- | :-------------------------------------------- |
@@ -240,6 +250,26 @@ Skills are workflow definitions that extend capabilities.
 | **continuous-learning** | Pattern extraction from sessions (PAAL cycle) |
 | **strategic-compact**   | Context window management                     |
 | **eval-harness**        | Performance evaluation metrics                |
+
+### Orchestration Skills
+
+| Skill                   | Purpose                     |
+| :---------------------- | :-------------------------- |
+| **intelligent-routing** | Automatic agent selection   |
+| **parallel-agents**     | Multi-agent orchestration   |
+| **behavioral-modes**    | Adaptive AI operation modes |
+
+### Domain Skills
+
+| Skill                     | Purpose                       |
+| :------------------------ | :---------------------------- |
+| **app-builder**           | Full-stack scaffolding        |
+| **mobile-design**         | React Native/Expo patterns    |
+| **webapp-testing**        | E2E and Playwright testing    |
+| **deployment-procedures** | CI/CD and rollback strategies |
+| **performance-profiling** | Core Web Vitals optimization  |
+| **brainstorming**         | Socratic discovery protocol   |
+| **plan-writing**          | Structured task breakdown     |
 
 ---
 
