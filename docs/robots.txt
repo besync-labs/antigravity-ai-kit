@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://besync-labs.github.io/antigravity-ai-kit/sitemap.xml

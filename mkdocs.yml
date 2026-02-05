@@ -73,6 +73,9 @@ nav:
   - Governance:
       - Rules: governance/index.md
       - Operating Constraints: governance/constraints.md
+  - SEO Setup:
+      - Google Search Console: google-search-console-setup.md
+      - GitHub Repository Settings: github-repository-settings.md
 
 extra:
   social:
@@ -81,5 +84,27 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/emre-dursun-nl/
   generator: false
+  # SEO Meta Tags
+  meta:
+    - property: og:type
+      content: website
+    - property: og:site_name
+      content: Antigravity AI Kit
+    - property: og:title
+      content: Antigravity AI Kit — Trust-Grade AI Framework
+    - property: og:description
+      content: Trust-Grade AI Development Framework with 10 agents, 20 commands, and 4 skills for Antigravity IDE
+    - property: og:url
+      content: https://besync-labs.github.io/antigravity-ai-kit/
+    - property: og:image
+      content: https://besync-labs.github.io/antigravity-ai-kit/assets/og-image.png
+    - name: twitter:card
+      content: summary_large_image
+    - name: twitter:title
+      content: Antigravity AI Kit
+    - name: twitter:description
+      content: Trust-Grade AI Development Framework for Antigravity IDE
+    - name: twitter:image
+      content: https://besync-labs.github.io/antigravity-ai-kit/assets/og-image.png
 
 copyright: Copyright &copy; 2026 Emre Dursun
