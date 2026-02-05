@@ -8,6 +8,7 @@ repo_url: https://github.com/besync-labs/antigravity-ai-kit
 
 theme:
   name: material
+  custom_dir: docs/overrides
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
