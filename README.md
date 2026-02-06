@@ -76,11 +76,19 @@
 
 ## ⚡ Quick Start
 
-### Option 1: Manual Installation (2 minutes)
+### Option 1: NPX (Recommended)
+
+```bash
+npx @emredursun/antigravity-ai-kit init
+```
+
+This automatically copies the `.agent/` folder to your project.
+
+### Option 2: Manual Installation
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/emredursun/antigravity-ai-kit.git
+git clone https://github.com/besync-labs/antigravity-ai-kit.git
 
 # 2. Copy .agent/ to your project
 cp -r antigravity-ai-kit/.agent/ your-project/.agent/
@@ -89,7 +97,7 @@ cp -r antigravity-ai-kit/.agent/ your-project/.agent/
 /status
 ```
 
-### Option 2: Direct Copy
+### Option 3: Direct Download
 
 1. Download the `.agent/` folder from this repository
 2. Place it in your project root
@@ -530,16 +538,37 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-MIT © [Emre Dursun](https://github.com/emredursun)
+MIT License — See [LICENSE](LICENSE) for details.
+
+---
+
+## 👤 Author
+
+**Emre Dursun** — Full-Stack Automation Engineer | AI Development Specialist
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emre-dursun-nl/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://emredursun.nl/)
+
+> _Creator of BeSync and the Trust-Grade AI Governance framework_
+
+---
+
+## 🔗 Links
+
+- **Repository**: [github.com/besync-labs/antigravity-ai-kit](https://github.com/besync-labs/antigravity-ai-kit)
+- **Documentation**: [besync-labs.github.io/antigravity-ai-kit](https://besync-labs.github.io/antigravity-ai-kit)
+- **Origin**: Derived from BeSync Trust-Grade AI Governance
 
 ---
 
 ## 🙏 Acknowledgments
 
-- Inspired by [vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit)
-- Patterns from [nth5693/gemini-kit](https://github.com/nth5693/gemini-kit)
-- Concepts from [Google Conductor](https://developers.googleblog.com/en/conductor-introducing-context-driven-development-for-gemini-cli/)
-- Architecture inspired by [everything-claude-code](https://github.com/affaan-m/everything-claude-code)
+- Initial patterns from [vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit)
+- Command structure inspired by [nth5693/gemini-kit](https://github.com/nth5693/gemini-kit)
+- Context-driven development from [Google Conductor](https://developers.googleblog.com/en/conductor-introducing-context-driven-development-for-gemini-cli/)
+- Hook concepts from [everything-claude-code](https://github.com/affaan-m/everything-claude-code)
+
+_Antigravity AI Kit v2.0.0 extends these foundations with Trust-Grade governance, session management, and 66+ capabilities._
 
 ---
 
@@ -548,5 +577,5 @@ MIT © [Emre Dursun](https://github.com/emredursun)
 </p>
 
 <p align="center">
-  <a href="https://github.com/emredursun/antigravity-ai-kit/stargazers">⭐ Star us on GitHub</a>
+  <a href="https://github.com/besync-labs/antigravity-ai-kit">⭐ Star me on GitHub</a>
 </p>
