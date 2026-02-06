@@ -1,59 +1,91 @@
 # Commands
 
-Slash commands provide quick execution of common operations.
+Slash commands provide quick execution of common operations. **31 commands** across 10 categories.
 
 ---
 
 ## Command Categories
 
-### Planning & Management
+### 📋 Planning & Management
 
 | Command      | Purpose                    |
 | :----------- | :------------------------- |
 | `/plan`      | Create implementation plan |
-| `/track`     | Start formal feature track |
 | `/implement` | Execute plan with tracking |
 | `/setup`     | Configure project context  |
 | `/status`    | Current session status     |
 
-### Development
+### 🔨 Development
 
-| Command        | Purpose                 |
-| :------------- | :---------------------- |
-| `/tdd`         | Test-driven development |
-| `/build-fix`   | Fix build errors        |
-| `/code-review` | Quality review          |
+| Command     | Purpose                       |
+| :---------- | :---------------------------- |
+| `/build`    | Build new features            |
+| `/tdd`      | Test-driven development       |
+| `/fix`      | Fix linting/type/build errors |
+| `/refactor` | Code refactoring              |
+| `/cook`     | Full scratch-to-done workflow |
 
-### Quality & Security
+### ✅ Quality & Security
 
 | Command          | Purpose                |
 | :--------------- | :--------------------- |
 | `/verify`        | Full verification loop |
+| `/code-review`   | Quality review         |
 | `/security-scan` | Security audit         |
+| `/perf`          | Performance analysis   |
 
-### Git & PRs
+### 🗃️ Git & PRs
 
-| Command      | Purpose             |
-| :----------- | :------------------ |
-| `/git`       | Git operations      |
-| `/pr`        | Create pull request |
-| `/review-pr` | Review pull request |
+| Command      | Purpose                 |
+| :----------- | :---------------------- |
+| `/git`       | Git operations          |
+| `/pr`        | Pull request management |
+| `/changelog` | Generate changelog      |
 
-### Research
+### 🔍 Research & Discovery
 
-| Command       | Purpose          |
-| :------------ | :--------------- |
-| `/research`   | Research a topic |
-| `/brainstorm` | Ideation session |
-| `/scout`      | Explore codebase |
+| Command     | Purpose               |
+| :---------- | :-------------------- |
+| `/research` | Research technologies |
+| `/scout`    | Explore codebase      |
+| `/ask`      | Code questions        |
 
-### Session
+### 🗄️ Database
 
-| Command       | Purpose              |
-| :------------ | :------------------- |
-| `/checkpoint` | Save session state   |
-| `/compact`    | Context management   |
-| `/knowledge`  | Query knowledge base |
+| Command | Purpose             |
+| :------ | :------------------ |
+| `/db`   | Database operations |
+
+### 🔌 Integration & Deployment
+
+| Command      | Purpose                  |
+| :----------- | :----------------------- |
+| `/integrate` | Third-party integrations |
+| `/deploy`    | Deployment operations    |
+
+### 🏛️ Architecture
+
+| Command   | Purpose                |
+| :-------- | :--------------------- |
+| `/adr`    | Architecture decisions |
+| `/design` | UI/UX design specs     |
+
+### 💾 Session Management
+
+| Command       | Purpose             |
+| :------------ | :------------------ |
+| `/checkpoint` | Save session state  |
+| `/compact`    | Context compression |
+| `/learn`      | Pattern extraction  |
+| `/eval`       | Metrics evaluation  |
+
+### ❓ Help & Utilities
+
+| Command  | Purpose                |
+| :------- | :--------------------- |
+| `/help`  | Help command           |
+| `/debug` | Systematic debugging   |
+| `/doc`   | Generate documentation |
 
 ---
 
@@ -69,4 +101,5 @@ Slash commands provide quick execution of common operations.
 /plan Add user authentication
 /verify
 /git commit "feat: add auth"
+/deploy production
 ```

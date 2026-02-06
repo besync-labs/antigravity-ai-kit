@@ -1,10 +1,14 @@
 # Skills
 
-Skills are workflow definitions that extend capabilities with specialized knowledge.
+Skills are domain expertise modules that extend AI capabilities with specialized knowledge and patterns.
 
 ---
 
-## Core Skills
+## Skill Categories
+
+### 🔧 Operational Skills
+
+Core runtime capabilities for AI agent operation.
 
 | Skill                   | Purpose                                       |
 | :---------------------- | :-------------------------------------------- |
@@ -15,48 +19,79 @@ Skills are workflow definitions that extend capabilities with specialized knowle
 
 ---
 
-## Verification Loop
+### 🎯 Orchestration Skills
 
-Runs all quality gates in sequence:
+Multi-agent coordination and routing.
 
-1. **Build Check** — TypeScript compilation
-2. **Lint Check** — ESLint validation
-3. **Test Suite** — Jest/Vitest tests
-4. **Coverage** — 80% minimum threshold
-5. **Security** — Dependency audit
+| Skill                   | Purpose                                                 |
+| :---------------------- | :------------------------------------------------------ |
+| **intelligent-routing** | Automatic agent selection based on task                 |
+| **parallel-agents**     | Multi-agent orchestration for complex tasks             |
+| **behavioral-modes**    | Adaptive AI operation modes (brainstorm, debug, review) |
+
+---
+
+### 💻 Development Skills
+
+Core development patterns and best practices.
+
+| Skill                 | Purpose                                     |
+| :-------------------- | :------------------------------------------ |
+| **app-builder**       | Full-stack application scaffolding          |
+| **frontend-patterns** | React, component patterns, state management |
+| **nodejs-patterns**   | Backend/NestJS patterns                     |
+| **typescript-expert** | Advanced TypeScript patterns                |
+| **api-patterns**      | RESTful API design principles               |
+| **clean-code**        | Code quality principles (SOLID, DRY)        |
+| **database-design**   | Schema design and optimization              |
+
+---
+
+### ✅ Quality Skills
+
+Testing, debugging, and security.
+
+| Skill                    | Purpose                         |
+| :----------------------- | :------------------------------ |
+| **testing-patterns**     | TDD, unit, integration testing  |
+| **debugging-strategies** | Systematic debugging approaches |
+| **security-practices**   | OWASP, vulnerability prevention |
+| **webapp-testing**       | E2E and Playwright testing      |
+
+---
+
+### 🚀 Infrastructure Skills
+
+DevOps, deployment, and performance.
+
+| Skill                     | Purpose                         |
+| :------------------------ | :------------------------------ |
+| **docker-patterns**       | Containerization best practices |
+| **git-workflow**          | Branching, commits, PRs         |
+| **deployment-procedures** | CI/CD and rollback strategies   |
+| **performance-profiling** | Core Web Vitals optimization    |
+
+---
+
+### 🎨 Design & Planning Skills
+
+Architecture, design, and planning.
+
+| Skill             | Purpose                                            |
+| :---------------- | :------------------------------------------------- |
+| **architecture**  | System design patterns (SOLID, Clean Architecture) |
+| **mobile-design** | Mobile UI/UX patterns for iOS/Android              |
+| **brainstorming** | Socratic discovery protocol                        |
+| **plan-writing**  | Structured task breakdown                          |
+
+---
+
+## Using Skills
+
+Skills are loaded automatically based on task context:
 
 ```
-/verify
+User Request → Keyword Analysis → Skill Match → Load SKILL.md → Apply Context
 ```
 
----
-
-## Continuous Learning (PAAL Cycle)
-
-Extracts reusable patterns from sessions:
-
-1. **P**attern — Identify recurring solution
-2. **A**bstract — Generalize the pattern
-3. **A**rchive — Store in knowledge base
-4. **L**everage — Reuse in future sessions
-
----
-
-## Strategic Compact
-
-Manages context window efficiently:
-
-- Preserves critical context
-- Compacts routine information
-- Maintains session coherence
-
----
-
-## Eval Harness
-
-Measures agent performance:
-
-- Task completion rate
-- Error frequency
-- User satisfaction
-- Response latency
+The `intelligent-routing` skill coordinates automatic skill selection.

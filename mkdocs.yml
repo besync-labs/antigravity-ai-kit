@@ -1,6 +1,6 @@
 site_name: Antigravity AI Kit
 site_url: https://besync-labs.github.io/antigravity-ai-kit/
-site_description: Trust-Grade AI Development Framework for Antigravity IDE
+site_description: Trust-Grade AI Development Framework — 15 Agents, 26 Skills, 31 Commands, 11 Workflows
 site_author: Emre Dursun
 
 repo_name: besync-labs/antigravity-ai-kit
@@ -67,10 +67,12 @@ nav:
       - Planner: agents/planner.md
       - Architect: agents/architect.md
       - Code Reviewer: agents/code-reviewer.md
-  - Commands:
-      - Overview: commands/index.md
   - Skills:
       - Overview: skills/index.md
+  - Commands:
+      - Overview: commands/index.md
+  - Workflows:
+      - Overview: workflows/index.md
   - Governance:
       - Rules: governance/index.md
       - Operating Constraints: governance/constraints.md
@@ -94,7 +96,7 @@ extra:
     - property: og:title
       content: Antigravity AI Kit — Trust-Grade AI Framework
     - property: og:description
-      content: Trust-Grade AI Development Framework with 10 agents, 20 commands, and 4 skills for Antigravity IDE
+      content: Trust-Grade AI Development Framework with 15 agents, 26 skills, 31 commands, and 11 workflows
     - property: og:url
       content: https://besync-labs.github.io/antigravity-ai-kit/
     - property: og:image
@@ -104,7 +106,7 @@ extra:
     - name: twitter:title
       content: Antigravity AI Kit
     - name: twitter:description
-      content: Trust-Grade AI Development Framework for Antigravity IDE
+      content: Trust-Grade AI Development Framework — 15 Agents, 26 Skills, 31 Commands, 11 Workflows
     - name: twitter:image
       content: https://besync-labs.github.io/antigravity-ai-kit/assets/og-image.png
 
