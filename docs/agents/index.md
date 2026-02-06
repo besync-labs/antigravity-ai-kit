@@ -1,28 +1,44 @@
 # Agents
 
-Agents are specialized sub-agents that handle delegated tasks with focused expertise.
+Agents are specialized sub-agents that handle delegated tasks with focused expertise. **17 agents** across 3 categories.
 
 ---
 
-## Agent Roster
+## Core Development
 
-| Agent                                    | Purpose                         | When to Use                  |
-| :--------------------------------------- | :------------------------------ | :--------------------------- |
-| 📋 **[Planner](planner.md)**             | Feature implementation planning | Before starting new features |
-| 🏛️ **[Architect](architect.md)**         | System design decisions         | For architectural changes    |
-| 🔍 **[Code Reviewer](code-reviewer.md)** | Quality & security review       | Before merging code          |
-| 🧪 **TDD Guide**                         | Test-driven development         | When writing tests           |
-| 🔐 **Security Reviewer**                 | Vulnerability analysis          | For security-sensitive code  |
-| 🔧 **Build Error Resolver**              | Rapid build fixes               | When builds fail             |
-| 🎭 **E2E Runner**                        | End-to-end testing              | For integration tests        |
-| 🧹 **Refactor Cleaner**                  | Dead code cleanup               | During refactoring           |
-| 📚 **Doc Updater**                       | Documentation sync              | After code changes           |
-| 🧠 **Knowledge Agent**                   | RAG retrieval                   | For context queries          |
-| 📱 **Mobile Developer**                  | React Native/Expo development   | For mobile app work          |
-| 🗄️ **Database Architect**                | Schema design & queries         | For database changes         |
-| 🚀 **DevOps Engineer**                   | CI/CD & deployment              | For infrastructure work      |
-| ⚡ **Performance Optimizer**             | Core Web Vitals optimization    | For performance tuning       |
-| 🔭 **Explorer Agent**                    | Codebase discovery              | For codebase exploration     |
+| Agent                                    | Role                    | Triggers                          |
+| :--------------------------------------- | :---------------------- | :-------------------------------- |
+| 📋 **[Planner](planner.md)**             | Feature planning        | plan, implementation              |
+| 🏛️ **[Architect](architect.md)**         | System design, patterns | architecture, design, scalability |
+| 🔍 **[Code Reviewer](code-reviewer.md)** | Quality assurance       | review, quality, best practices   |
+| 🧪 **TDD Specialist**                    | Test-driven development | test, tdd, coverage               |
+
+---
+
+## Domain Specialists
+
+| Agent                       | Role                          | Triggers                     |
+| :-------------------------- | :---------------------------- | :--------------------------- |
+| 📱 **Mobile Developer**     | iOS/Android patterns          | mobile, react-native, expo   |
+| 🎨 **Frontend Specialist**  | React, Vue, UI/UX             | frontend, component, styling |
+| 🔧 **Backend Specialist**   | Node.js, NestJS, APIs         | backend, api, server         |
+| 🗄️ **Database Architect**   | Schema, queries, optimization | database, prisma, sql        |
+| 🚀 **DevOps Engineer**      | CI/CD, Docker, deployment     | devops, docker, deploy       |
+| 🔐 **Security Auditor**     | Vulnerabilities, compliance   | security, auth, audit        |
+| ⚡ **Performance Engineer** | Optimization, profiling       | performance, speed, metrics  |
+
+---
+
+## Support
+
+| Agent                       | Role                       | Triggers              |
+| :-------------------------- | :------------------------- | :-------------------- |
+| 📚 **Documentation Writer** | Docs, READMEs, guides      | documentation, readme |
+| 🐛 **Debugger**             | Systematic debugging       | debug, error, fix     |
+| 🧹 **Refactorer**           | Code cleanup, optimization | refactor, cleanup     |
+| 🔭 **Explorer Agent**       | Codebase discovery         | explore, scout        |
+| 🎭 **E2E Runner**           | End-to-end testing         | e2e, integration      |
+| 🧠 **Knowledge Agent**      | RAG retrieval              | knowledge, context    |
 
 ---
 

@@ -8,13 +8,15 @@ Welcome to the **Antigravity AI Kit** documentation — a Trust-Grade AI develop
 
 Antigravity AI Kit transforms your IDE into a **virtual engineering team** with:
 
-| Feature          | Count | Description                                           |
-| :--------------- | :---- | :---------------------------------------------------- |
-| 🤖 **AI Agents** | 15    | Specialized roles (Planner, Architect, Reviewer...)   |
-| 🛠️ **Skills**    | 26    | Domain expertise modules (API, Database, Security...) |
-| ⌨️ **Commands**  | 31    | Slash commands for every workflow                     |
-| 🔄 **Workflows** | 11    | Full development workflows (debug, deploy, test...)   |
-| ⚖️ **Rules**     | 5     | Immutable governance constraints                      |
+| Feature           | Count | Description                                                            |
+| :---------------- | :---- | :--------------------------------------------------------------------- |
+| 🤖 **AI Agents**  | 17    | Specialized roles (Mobile, DevOps, Database, Security, Performance...) |
+| 🛠️ **Skills**     | 26    | Domain knowledge modules (API, Testing, Architecture, Docker...)       |
+| ⌨️ **Commands**   | 31    | Slash commands for every development workflow                          |
+| 🔄 **Workflows**  | 11    | Process templates (/create, /debug, /deploy, /test...)                 |
+| ✅ **Checklists** | 3     | Quality gates (session-start, session-end, pre-commit)                 |
+| 🔗 **Hooks**      | 4     | Event-driven automation                                                |
+| ⚖️ **Rules**      | 5     | Immutable governance constraints                                       |
 
 ---
 
@@ -24,11 +26,11 @@ Antigravity AI Kit transforms your IDE into a **virtual engineering team** with:
 
 - :rocket: **[Getting Started](getting-started.md)**
 
-  Get up and running in 2 minutes
+  NPX install in 30 seconds
 
 - :robot: **[Agents](agents/index.md)**
 
-  15 specialized agents for delegation
+  17 specialized agents for delegation
 
 - :keyboard: **[Commands](commands/index.md)**
 
@@ -41,6 +43,10 @@ Antigravity AI Kit transforms your IDE into a **virtual engineering team** with:
 - :arrows_counterclockwise: **[Workflows](workflows/index.md)**
 
   11 full development workflows
+
+- :repeat: **[Session Management](session-management.md)**
+
+  Never lose context between sessions
 
 - :scales: **[Governance](governance/index.md)**
 
@@ -60,11 +66,8 @@ This isn't just a collection of prompts. It's an **engineered framework** that e
 
 ## Key Features
 
-- **🔒 Trust-Grade Governance** — Immutable constraints ensure safe, consistent behavior
-- **🤖 Multi-Agent System** — 15 specialized agents that collaborate seamlessly
-- **🛠️ 26 Skills** — Deep domain expertise from API design to security practices
-- **⌨️ 31 Commands** — Slash commands for every development need
-- **🔄 11 Workflows** — Complete development lifecycles (debug → deploy → verify)
-- **📦 Context as Artifact** — Persistent markdown files for plans and decisions
-- **🔄 Continuous Learning** — PAAL cycle extracts patterns from sessions
-- **🛡️ Security First** — Built-in secret detection and vulnerability scanning
+- **🔒 Trust-Grade Governance** — `/explore → /plan → /work → /review` — Each iteration builds context
+- **🤖 Multi-Agent System** — 17 specialized agents that collaborate (Mobile Developer, DevOps, Database Architect...)
+- **📦 Context as Artifact** — Persistent markdown files for plans, specs, and decisions
+- **🔄 Continuous Learning** — PAAL cycle extracts patterns from every session
+- **🛡️ Security First** — Built-in secret detection, vulnerability scanning, and compliance checks

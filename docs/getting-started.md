@@ -1,24 +1,41 @@
 # Getting Started
 
-Get up and running with Antigravity AI Kit in 2 minutes.
+Get up and running with Antigravity AI Kit in **30 seconds**.
 
 ---
 
-## Installation
+## ⚡ Quick Start
 
-### Option 1: Clone the Repository
+### Option 1: NPX (Recommended)
 
 ```bash
-# Clone the repository
-git clone https://github.com/besync-labs/antigravity-ai-kit.git
-
-# Copy .agent/ to your project
-cp -r antigravity-ai-kit/.agent/ your-project/.agent/
+npx @emredursun/antigravity-ai-kit init
 ```
 
-### Option 2: Download .agent/ Only
+This automatically copies the `.agent/` folder to your project. Done!
 
-Download just the `.agent/` folder from the repository and place it in your project root.
+---
+
+### Option 2: Manual Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/besync-labs/antigravity-ai-kit.git
+
+# 2. Copy .agent/ to your project
+cp -r antigravity-ai-kit/.agent/ your-project/.agent/
+
+# 3. Start your session
+/status
+```
+
+---
+
+### Option 3: Direct Download
+
+1. Download the `.agent/` folder from [GitHub](https://github.com/besync-labs/antigravity-ai-kit)
+2. Place it in your project root
+3. Run `/status` in your AI-powered IDE
 
 ---
 
@@ -74,6 +91,9 @@ Runs all quality gates: build, lint, test, coverage.
 
 ## Next Steps
 
-- Explore [Agents](agents/index.md) — 10 specialized AI agents
-- Learn [Commands](commands/index.md) — 20 slash commands
-- Understand [Governance](governance/index.md) — Operating constraints
+- **[Agents](agents/index.md)** — 17 specialized AI agents
+- **[Commands](commands/index.md)** — 31 slash commands
+- **[Skills](skills/index.md)** — 26 domain expertise modules
+- **[Workflows](workflows/index.md)** — 11 development workflows
+- **[Session Management](session-management.md)** — Never lose context
+- **[Governance](governance/index.md)** — Operating constraints
