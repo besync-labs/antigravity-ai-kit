@@ -1,7 +1,7 @@
 # Antigravity AI Kit — Skills
 
 > **Purpose**: Workflow definitions and domain knowledge extensions
-> **Count**: 14 Skills (4 Operational + 10 Domain)
+> **Count**: 26 Skills (4 Operational + 3 Orchestration + 12 Domain + 7 Development)
 
 ---
 
@@ -25,7 +25,7 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 
 ---
 
-## Operational Skills (Meta/System)
+## Operational Skills (4)
 
 | Skill                                               | Purpose                   |
 | :-------------------------------------------------- | :------------------------ |
@@ -36,7 +36,7 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 
 ---
 
-## Orchestration Skills
+## Orchestration Skills (3)
 
 | Skill                                               | Purpose                     |
 | :-------------------------------------------------- | :-------------------------- |
@@ -46,9 +46,38 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 
 ---
 
-## Domain Skills
+## Domain Skills (12)
 
-### Development
+### Architecture & Design
+
+| Skill                                           | Purpose                  |
+| :---------------------------------------------- | :----------------------- |
+| [architecture](architecture/SKILL.md)           | System design patterns   |
+| [api-patterns](api-patterns/SKILL.md)           | RESTful API design       |
+| [database-design](database-design/SKILL.md)     | Schema optimization      |
+| [frontend-patterns](frontend-patterns/SKILL.md) | React/component patterns |
+| [nodejs-patterns](nodejs-patterns/SKILL.md)     | Backend patterns         |
+
+### Code Quality
+
+| Skill                                                 | Purpose                 |
+| :---------------------------------------------------- | :---------------------- |
+| [clean-code](clean-code/SKILL.md)                     | Code quality principles |
+| [typescript-expert](typescript-expert/SKILL.md)       | Advanced TypeScript     |
+| [testing-patterns](testing-patterns/SKILL.md)         | TDD, unit, integration  |
+| [debugging-strategies](debugging-strategies/SKILL.md) | Systematic debugging    |
+
+### Operations
+
+| Skill                                             | Purpose                         |
+| :------------------------------------------------ | :------------------------------ |
+| [docker-patterns](docker-patterns/SKILL.md)       | Containerization                |
+| [git-workflow](git-workflow/SKILL.md)             | Branching, commits              |
+| [security-practices](security-practices/SKILL.md) | OWASP, vulnerability prevention |
+
+---
+
+## Development Skills (7)
 
 | Skill                                                   | Purpose                       |
 | :------------------------------------------------------ | :---------------------------- |
@@ -57,13 +86,8 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 | [webapp-testing](webapp-testing/SKILL.md)               | E2E and Playwright testing    |
 | [deployment-procedures](deployment-procedures/SKILL.md) | CI/CD and rollback strategies |
 | [performance-profiling](performance-profiling/SKILL.md) | Core Web Vitals optimization  |
-
-### Planning
-
-| Skill                                   | Purpose                     |
-| :-------------------------------------- | :-------------------------- |
-| [brainstorming](brainstorming/SKILL.md) | Socratic discovery protocol |
-| [plan-writing](plan-writing/SKILL.md)   | Structured task breakdown   |
+| [brainstorming](brainstorming/SKILL.md)                 | Socratic discovery protocol   |
+| [plan-writing](plan-writing/SKILL.md)                   | Structured task breakdown     |
 
 ---
 
@@ -73,8 +97,7 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 ---
 name: skill-name
 description: What this skill does
-version: 1.0.0
-allowed-tools: Read, Glob, Grep
+triggers: [context, keywords]
 ---
 
 # Skill Name
@@ -88,9 +111,11 @@ allowed-tools: Read, Glob, Grep
 1. [Step 1]
 2. [Step 2]
 
-## Configuration
+## Quick Reference
 
-[Any configurable parameters]
+| Pattern | Usage       |
+| :------ | :---------- |
+| Example | Description |
 ```
 
 ---

@@ -1,0 +1,45 @@
+{
+  "name": "@emredursun/antigravity-ai-kit",
+  "version": "2.0.0",
+  "description": "🚀 Trust-Grade AI development framework - 17 Agents, 26 Skills, 31 Commands, 11 Workflows",
+  "main": "bin/ag-kit.js",
+  "bin": {
+    "ag-kit": "./bin/ag-kit.js"
+  },
+  "scripts": {
+    "postinstall": "echo '✅ Antigravity AI Kit installed! Run: ag-kit init'"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "gemini",
+    "claude",
+    "antigravity",
+    "development",
+    "workflow",
+    "skills",
+    "commands",
+    "devtools",
+    "productivity",
+    "cli"
+  ],
+  "author": "Emre Dursun <info@emredursun.nl>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emredursun/antigravity-ai-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emredursun/antigravity-ai-kit/issues"
+  },
+  "homepage": "https://github.com/emredursun/antigravity-ai-kit#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    ".agent/",
+    "README.md",
+    "LICENSE"
+  ]
+}

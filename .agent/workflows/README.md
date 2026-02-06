@@ -1,57 +1,31 @@
 # Antigravity AI Kit — Workflows
 
-> **Purpose**: Slash command workflows for common tasks
-> **Count**: 8 Workflows
+> **Purpose**: Process templates for common development tasks
+> **Count**: 11 Workflows
 
 ---
 
 ## Overview
 
-Workflows are triggered by `/command` syntax for common development tasks. Each workflow provides structured guidance and output formats.
+Workflows are structured process templates that guide you through complex tasks. Invoke them using slash commands.
 
 ---
 
 ## Available Workflows
 
-| Command                        | Purpose                     |
-| :----------------------------- | :-------------------------- |
-| [/brainstorm](brainstorm.md)   | Structured idea exploration |
-| [/plan](plan.md)               | Implementation planning     |
-| [/debug](debug.md)             | Systematic debugging        |
-| [/enhance](enhance.md)         | Feature addition/updates    |
-| [/orchestrate](orchestrate.md) | Multi-agent coordination    |
-| [/deploy](deploy.md)           | Production deployment       |
-| [/preview](preview.md)         | Local server management     |
-| [/status](status.md)           | Project status display      |
-
----
-
-## Quick Reference
-
-### Planning & Discovery
-
-```
-/brainstorm [topic]     - Explore options before coding
-/plan [feature]         - Create implementation plan
-/status                 - Show project status
-```
-
-### Development
-
-```
-/enhance [feature]      - Add/update features
-/debug [issue]          - Systematic debugging
-/orchestrate [task]     - Multi-agent complex tasks
-```
-
-### Deployment
-
-```
-/preview                - Manage dev server
-/deploy                 - Production deployment
-/deploy check           - Pre-deployment checks
-/deploy rollback        - Rollback to previous
-```
+| Workflow          | Command          | Description                                   |
+| :---------------- | :--------------- | :-------------------------------------------- |
+| **brainstorm**    | `/brainstorm`    | Creative ideation and problem exploration     |
+| **create**        | `/create`        | Scaffold new features, components, or modules |
+| **debug**         | `/debug`         | Systematic debugging process                  |
+| **deploy**        | `/deploy`        | Deployment workflow with verification         |
+| **enhance**       | `/enhance`       | Improve existing code quality                 |
+| **orchestrate**   | `/orchestrate`   | Multi-agent coordination                      |
+| **plan**          | `/plan`          | Create implementation plans                   |
+| **preview**       | `/preview`       | Preview changes before committing             |
+| **status**        | `/status`        | Check project status                          |
+| **test**          | `/test`          | Systematic test writing                       |
+| **ui-ux-pro-max** | `/ui-ux-pro-max` | Premium UI/UX design                          |
 
 ---
 
@@ -62,34 +36,43 @@ Workflows are triggered by `/command` syntax for common development tasks. Each 
 description: What this workflow does
 ---
 
-# /command - Title
+# /workflow-name Workflow
 
-$ARGUMENTS
+> **Purpose**: Brief description
 
 ---
 
-## Task
+## Workflow Steps
 
-[What happens when triggered]
+### 1. Step Name
 
-## Behavior
+Description and actions...
 
-[Step by step process]
+### 2. Step Name
 
-## Output Format
+Description and actions...
 
-[Expected output]
+---
+
+## Checklist
+
+- [ ] Task 1
+- [ ] Task 2
+
+---
 
 ## Examples
 
-[Usage examples]
+\`\`\`
+/workflow-name example usage
+\`\`\`
 ```
 
 ---
 
 ## Creating Custom Workflows
 
-1. Create a new `.md` file in this directory
-2. Name it after the command (e.g., `mycommand.md`)
-3. Follow the format above
-4. Use `$ARGUMENTS` placeholder for user input
+1. Create `workflows/my-workflow.md`
+2. Add frontmatter with `description`
+3. Define workflow steps
+4. Include checklist and examples

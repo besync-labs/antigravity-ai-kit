@@ -1,115 +1,119 @@
 # Antigravity AI Kit — Commands
 
-> **Purpose**: Slash commands for quick execution of common operations
-> **Count**: 20 Core Commands
+> **Purpose**: Slash commands for quick access to common operations
+> **Count**: 31 Commands
 
 ---
 
 ## Overview
 
-Commands provide quick, consistent execution of development operations. Type `/command` to invoke.
+Commands are quick invocations that trigger specific actions or workflows. Type `/command-name` in chat to use.
 
 ---
 
 ## Command Categories
 
-### 📋 Planning & Management
+### Core Workflow
 
-| Command      | Purpose                    | Usage                           |
-| :----------- | :------------------------- | :------------------------------ |
-| `/plan`      | Create implementation plan | `/plan Add user authentication` |
-| `/track`     | Start formal feature track | `/track AUTH-001`               |
-| `/implement` | Execute plan with tracking | `/implement`                    |
-| `/setup`     | Configure project context  | `/setup`                        |
-| `/status`    | Current session status     | `/status`                       |
+| Command      | Description                |
+| :----------- | :------------------------- |
+| `/plan`      | Create implementation plan |
+| `/implement` | Execute the approved plan  |
+| `/verify`    | Run all quality gates      |
+| `/status`    | Check project status       |
 
-### 💻 Development
+### Development
 
-| Command        | Purpose                 | Usage               |
-| :------------- | :---------------------- | :------------------ |
-| `/tdd`         | Test-driven development | `/tdd UserService`  |
-| `/build-fix`   | Fix build errors        | `/build-fix`        |
-| `/code-review` | Quality review          | `/code-review src/` |
+| Command     | Description                        |
+| :---------- | :--------------------------------- |
+| `/build`    | Build a new feature from scratch   |
+| `/fix`      | Fix linting, type, or build errors |
+| `/debug`    | Systematic debugging process       |
+| `/refactor` | Improve code quality               |
+| `/cook`     | Full scratch-to-done workflow      |
 
-### ✅ Quality & Security
+### Documentation & Git
 
-| Command          | Purpose                | Usage            |
-| :--------------- | :--------------------- | :--------------- |
-| `/verify`        | Full verification loop | `/verify`        |
-| `/security-scan` | Security audit         | `/security-scan` |
+| Command      | Description                         |
+| :----------- | :---------------------------------- |
+| `/doc`       | Generate documentation              |
+| `/adr`       | Create Architecture Decision Record |
+| `/changelog` | Generate changelog from commits     |
+| `/git`       | Git operations with best practices  |
+| `/pr`        | Create or manage pull requests      |
 
-### 🔀 Git & PRs
+### Exploration & Research
 
-| Command      | Purpose             | Usage                          |
-| :----------- | :------------------ | :----------------------------- |
-| `/git`       | Git operations      | `/git commit "feat: add auth"` |
-| `/pr`        | Create pull request | `/pr`                          |
-| `/review-pr` | Review pull request | `/review-pr 123`               |
+| Command     | Description                        |
+| :---------- | :--------------------------------- |
+| `/scout`    | Explore and understand codebase    |
+| `/research` | Research technologies or solutions |
+| `/ask`      | Ask questions about code           |
 
-### 🔍 Research
+### Quality & Security
 
-| Command       | Purpose          | Usage                         |
-| :------------ | :--------------- | :---------------------------- |
-| `/research`   | Research a topic | `/research React vs Vue`      |
-| `/brainstorm` | Ideation session | `/brainstorm Auth approaches` |
-| `/scout`      | Explore codebase | `/scout src/services/`        |
+| Command          | Description                           |
+| :--------------- | :------------------------------------ |
+| `/code-review`   | Run code review                       |
+| `/tdd`           | Test-driven development workflow      |
+| `/security-scan` | Security audit and vulnerability scan |
+| `/perf`          | Performance analysis and optimization |
 
-### 📊 Session
+### Integration & Deployment
 
-| Command       | Purpose              | Usage                      |
-| :------------ | :------------------- | :------------------------- |
-| `/checkpoint` | Save session state   | `/checkpoint`              |
-| `/compact`    | Context management   | `/compact`                 |
-| `/knowledge`  | Query knowledge base | `/knowledge auth patterns` |
-| `/index`      | Index documentation  | `/index docs/`             |
+| Command      | Description                     |
+| :----------- | :------------------------------ |
+| `/integrate` | Third-party service integration |
+| `/db`        | Database schema and migrations  |
+| `/deploy`    | Deploy to target environment    |
+| `/design`    | UI/UX design specifications     |
+
+### Context Management
+
+| Command       | Description                   |
+| :------------ | :---------------------------- |
+| `/learn`      | Extract patterns from session |
+| `/checkpoint` | Save progress checkpoint      |
+| `/compact`    | Compress context for memory   |
+| `/eval`       | Evaluate metrics              |
+| `/setup`      | Configure project with kit    |
+| `/help`       | Show available commands       |
 
 ---
 
-## Command File Format
-
-Each command file follows this structure:
+## Command Format
 
 ```markdown
 ---
-name: command-name
-description: Brief description
-invokes: [agent-name] # Optional
+description: What this command does
 ---
 
-# /command-name
+# /command-name Command
 
-> **Purpose**: What this command does
-
----
+Brief description.
 
 ## Usage
-```
 
-/command-name [args]
-
-```
-
-## Behavior
-
-1. [Step 1]
-2. [Step 2]
+\`\`\`
+/command-name [options]
+\`\`\`
 
 ## Examples
 
-```
+\`\`\`
+/command-name example usage
+\`\`\`
 
-/command-name arg1 arg2
+## Process
 
-```
-
+1. Step 1
+2. Step 2
 ```
 
 ---
 
 ## Creating Custom Commands
 
-1. Create a new `.md` file in this directory
-2. Follow the format above
-3. Reference agents if needed
-
-Commands inherit Operating Constraints from `rules.md`.
+1. Create `commands/my-command.md`
+2. Add frontmatter with `description`
+3. Define usage, examples, and process
