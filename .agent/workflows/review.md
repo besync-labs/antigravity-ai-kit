@@ -1,5 +1,6 @@
 ---
 description: Code review workflow. Sequential quality gate pipeline — lint, type-check, test, security scan, and build verification.
+version: 2.0.0
 ---
 
 # /review — Code Review Quality Gate
@@ -10,9 +11,25 @@ description: Code review workflow. Sequential quality gate pipeline — lint, ty
 > [!CAUTION]
 > Sequential gate pipeline — each step must pass before proceeding. Failed gates block merge. No overrides.
 
+> [!TIP]
+> This workflow leverages the **verification-loop** skill. Read `.agent/skills/verification-loop/SKILL.md` for extended guidance.
+
 ---
 
-## 🔴 Critical Rules
+## Scope Filter
+
+| Commit Type | Review Required? | Rationale |
+| :---------- | :--------------- | :-------- |
+| `feat()` | ✅ Full review | New functionality needs all gates |
+| `fix()` | ✅ Full review | Bug fixes need regression verification |
+| `refactor()` | ✅ Full review | Structural changes need quality validation |
+| `test()` | ⚠️ Gate 3 only | Test-only changes need test verification |
+| `docs()` | ❌ Skip | No testable code changes |
+| `chore()` | ❌ Skip | Config/tooling, no code quality risk |
+
+---
+
+## Critical Rules
 
 1. **SEQUENTIAL** — each gate must pass before the next runs
 2. **STOP ON FAILURE** — if a gate fails, stop immediately, show error + fix suggestion
@@ -105,7 +122,7 @@ cargo build --release   # Rust
 
 ---
 
-## Output Format
+## Output Template
 
 ### ✅ All Gates Passed
 
@@ -162,8 +179,7 @@ Re-run: `/review` or `/review {gate}`
 
 ## Related Resources
 
-| Resource      | Path                                |
-| :------------ | :---------------------------------- |
-| Quality Gate  | `.agent/workflows/quality-gate.md`  |
-| Retrospective | `.agent/workflows/retrospective.md` |
-| Plan          | `.agent/workflows/plan.md`          |
+- **Previous**: `/test` (tests must pass before review)
+- **Next**: `/deploy` (deployment after all gates pass)
+- **Skill**: `.agent/skills/verification-loop/SKILL.md`
+- **Related**: `/quality-gate` (pre-task research) · `/retrospective` (sprint-level audit)

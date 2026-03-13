@@ -1,98 +1,154 @@
 ---
 description: Systematic debugging workflow. Activates DEBUG mode for problem investigation.
+version: 2.0.0
 ---
 
-# /debug - Systematic Problem Investigation
+# /debug — Systematic Problem Investigation
 
-$ARGUMENTS
+> **Trigger**: `/debug [issue description]`
+> **Lifecycle**: Reactive — any SDLC phase
+
+> [!CAUTION]
+> Debugging may involve production systems. Never apply untested fixes to production. Always identify and document the root cause before implementing changes.
+
+> [!TIP]
+> This workflow leverages the **debugging-strategies** skill. Read `.agent/skills/debugging-strategies/SKILL.md` for extended guidance.
 
 ---
 
-## Purpose
+## Critical Rules
 
-Activates DEBUG mode for systematic investigation of issues, errors, or unexpected behavior.
+1. **Root cause required** — never apply a fix without understanding why the issue occurs
+2. **No guessing** — form hypotheses, test them systematically, eliminate possibilities
+3. **Prevention mandatory** — every fix must include measures to prevent recurrence
+4. **Preserve evidence** — capture error messages, logs, and reproduction steps before changing anything
+5. **Minimal changes** — fix only what's broken; avoid scope creep during debugging
 
 ---
 
-## Behavior
+## Argument Parsing
 
+| Command | Action |
+| :-------------------------- | :------------------------------------------- |
+| `/debug` | Prompt for issue description |
+| `/debug [issue]` | Investigate the specified issue directly |
+
+---
+
+## Steps
+
+// turbo
 1. **Gather Information**
-   - Error message
-   - Reproduction steps
-   - Expected vs actual behavior
-   - Recent changes
+   - Capture the exact error message, stack trace, or unexpected behavior
+   - Document reproduction steps (reliable vs. intermittent)
+   - Note expected vs. actual behavior
 
-2. **Form Hypotheses**
-   - List possible causes
-   - Order by likelihood
+// turbo
+2. **Environment Diagnostics**
+   - Operating system and version
+   - Runtime versions (Node.js, Python, etc.)
+   - Recent git changes (`git log -5 --oneline`)
+   - Relevant environment variables and config
+   - Dependency versions (`package.json`, `pyproject.toml`, etc.)
 
-3. **Investigate Systematically**
-   - Test each hypothesis
-   - Check logs, data flow
-   - Use elimination method
+// turbo
+3. **Form Hypotheses**
+   - List 3+ possible causes, ordered by likelihood
+   - Consider: recent changes, dependency issues, environment differences, data edge cases
 
-4. **Fix and Prevent**
-   - Apply fix
-   - Explain root cause
-   - Add prevention measures
+// turbo
+4. **Investigate Systematically**
+   - Test each hypothesis in order of likelihood
+   - Check logs, data flow, network requests, and state
+   - Use elimination method — rule out causes definitively
+   - Document findings for each hypothesis tested
+
+5. **Apply Fix**
+   - Implement the minimal fix that addresses the root cause
+   - Verify the fix resolves the original issue
+   - Confirm no regressions are introduced
+
+6. **Prevent Recurrence**
+   - Add tests that would catch this issue
+   - Add validation, error handling, or guardrails as needed
+   - Document the root cause for future reference
 
 ---
 
-## Output Format
+## Output Template
 
 ```markdown
 ## 🔍 Debug: [Issue]
 
 ### 1. Symptom
 
-[What's happening]
+[What's happening — error message, unexpected behavior]
 
-### 2. Information Gathered
+### 2. Environment
 
-- Error: `[error message]`
-- File: `[filepath]`
-- Line: [line number]
+- **OS**: [os]
+- **Runtime**: [runtime and version]
+- **Recent Changes**: [last 3 commits]
 
 ### 3. Hypotheses
 
-1. ❓ [Most likely cause]
-2. ❓ [Second possibility]
-3. ❓ [Less likely cause]
+1. ❓ [Most likely cause] — [why]
+2. ❓ [Second possibility] — [why]
+3. ❓ [Less likely cause] — [why]
 
 ### 4. Investigation
 
-**Testing hypothesis 1:**
-[What I checked] → [Result]
+**Hypothesis 1:** [What I checked] → [Result: confirmed / eliminated]
+**Hypothesis 2:** [What I checked] → [Result]
 
 ### 5. Root Cause
 
-🎯 **[Explanation]**
+🎯 **[Root cause explanation]**
 
-### 6. Fix
+### 6. Fix Applied
 
-[Code changes]
+[Code changes with explanation]
 
 ### 7. Prevention
 
-🛡️ [How to prevent in future]
+🛡️ [Tests added, validation added, documentation updated]
+
+After fix: proceed to `/test` for regression verification.
 ```
 
 ---
 
-## Examples
+## Governance
 
-```
-/debug login not working
-/debug API returns 500
-/debug form doesn't submit
-/debug data not saving
-```
+**PROHIBITED:**
+- Applying fixes without identifying the root cause
+- Guessing randomly without structured hypothesis testing
+- Modifying production systems without rollback plan
+- Ignoring prevention measures after a fix
+- Skipping failed steps · proceeding without resolution
+
+**REQUIRED:**
+- Evidence-based hypothesis testing
+- Root cause documentation before any fix
+- Prevention measures (tests, validation, guardrails)
+- Regression verification after fix
 
 ---
 
-## Key Principles
+## Completion Criteria
 
-- **Ask before assuming** — get full error context
-- **Test hypotheses** — don't guess randomly
-- **Explain why** — not just what to fix
-- **Prevent recurrence** — add tests, validation
+- [ ] Error/issue is fully reproduced and documented
+- [ ] Environment diagnostics are captured
+- [ ] Root cause is identified with evidence
+- [ ] Fix is applied and verified
+- [ ] Prevention measures are implemented (tests, validation)
+- [ ] No regressions introduced
+- [ ] After fix: proceed to `/test` for full regression check
+
+---
+
+## Related Resources
+
+- **Next**: `/test` (regression verification after fix)
+- **Skill**: `.agent/skills/debugging-strategies/SKILL.md`
+- **Related Skills**: `.agent/skills/testing-patterns/SKILL.md`

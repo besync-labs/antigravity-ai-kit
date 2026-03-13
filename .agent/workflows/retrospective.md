@@ -1,5 +1,6 @@
 ---
 description: Tier-1 Retrospective Quality Audit — full product, architecture, and pipeline review against market standards
+version: 2.0.0
 ---
 
 # /retrospective — Tier-1 Retrospective Quality Audit
@@ -9,6 +10,16 @@ description: Tier-1 Retrospective Quality Audit — full product, architecture, 
 
 > [!CAUTION]
 > Critical governance workflow. Do NOT defend previous decisions by default, minimize issues, or optimize for speed over correctness. Be critical, precise, honest.
+
+---
+
+## Critical Rules
+
+1. **No defense bias** — never defend previous decisions by default; evaluate with fresh eyes
+2. **No minimization** — report all issues at their true severity, never downplay
+3. **Evidence required** — every classification (✅/⚠️/❌) must be backed by data or benchmarks
+4. **Structural over cosmetic** — prefer foundational improvements over surface fixes
+5. **Market-grade bar** — compare against Google/Meta/Apple quality standards
 
 ---
 
@@ -63,6 +74,8 @@ For each feature, evaluate against market leaders and best-in-class implementati
 
 ### Step 3: Outdated Pattern Detection
 
+// turbo
+
 Evaluate each item:
 
 - Legacy UX, architecture, or pipeline assumptions?
@@ -75,9 +88,13 @@ Evaluate each item:
 
 ### Step 4: Tier-1 Quality Validation
 
+// turbo
+
 For each system: Would it pass review at Google/Meta/Apple? Senior-level or merely functional? Shortcuts, missing edge cases? Code quality meet strict TypeScript/testing standards? AI pipelines reproducible and benchmarked?
 
 ### Step 5: Ethics, Bias & Automation Safety
+
+// turbo
 
 - AI scoring bias (demographic, linguistic)?
 - Automated actions transparent and explainable?
@@ -85,6 +102,8 @@ For each system: Would it pass review at Google/Meta/Apple? Senior-level or mere
 - Automation safeguards effective (human-in-the-loop, rate limiting)?
 
 ### Step 6: Differentiation Alignment
+
+// turbo
 
 Check each feature against your product values:
 
@@ -95,6 +114,8 @@ Check each feature against your product values:
 - Explainable AI scoring?
 
 ### Step 7: Classification & Reporting
+
+// turbo
 
 | Classification         | Meaning                             | Action             |
 | :--------------------- | :---------------------------------- | :----------------- |
@@ -168,8 +189,6 @@ Check each feature against your product values:
 
 ## Related Resources
 
-| Resource     | Path                               |
-| :----------- | :--------------------------------- |
-| Quality Gate | `.agent/workflows/quality-gate.md` |
-| Plan         | `.agent/workflows/plan.md`         |
-| Review       | `.agent/workflows/review.md`       |
+- **Previous**: Sprint/milestone completion triggers this workflow
+- **Next**: `/plan` (findings feed next sprint's planning)
+- **Related**: `/quality-gate` (pre-task validation) · `/review` (code-level quality gates)

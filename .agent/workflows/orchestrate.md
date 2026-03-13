@@ -1,114 +1,167 @@
 ---
 description: Multi-agent orchestration for complex tasks requiring multiple specialists.
+version: 2.0.0
 ---
 
-# /orchestrate - Multi-Agent Coordination
+# /orchestrate — Multi-Agent Coordination
 
-$ARGUMENTS
+> **Trigger**: `/orchestrate [task description]`
+> **Lifecycle**: Reactive — complex multi-domain tasks at any SDLC phase
+
+> [!CAUTION]
+> This workflow coordinates multiple agents on the same codebase. Ensure clear domain boundaries to avoid conflicting changes. Phase 2 (implementation) requires explicit user approval.
+
+> [!TIP]
+> This workflow leverages the **parallel-agents** and **intelligent-routing** skills. Read `.agent/skills/parallel-agents/SKILL.md` and `.agent/skills/intelligent-routing/SKILL.md` for extended guidance.
 
 ---
 
-## 🔴 CRITICAL: 2-Phase Orchestration
+## Critical Rules
 
-### PHASE 1: PLANNING (Sequential)
+1. **2-Phase protocol** — always plan before implementing; never skip Phase 1
+2. **User approval gate** — Phase 2 cannot start without explicit user approval
+3. **Context passing mandatory** — every subagent must receive full context (original request, decisions made, previous work)
+4. **No agent conflicts** — agents must work on separate files or clearly delineated domains
+5. **Verification required** — run quality gates after all agents complete
 
-| Step | Agent            | Action                         |
-| ---- | ---------------- | ------------------------------ |
-| 1    | `planner`        | Create implementation plan     |
-| 2    | `explorer-agent` | Codebase discovery (if needed) |
+---
 
-> 🔴 **NO OTHER AGENTS during planning!**
+## Steps
 
-### ⏸️ CHECKPOINT: User Approval
+### PHASE 1: Planning (Sequential)
 
-After plan is complete, ASK:
+// turbo
+1. **Analyze Task Domains**
+   - Identify all domains involved (backend, frontend, database, security, etc.)
+   - Map which agents are needed
 
-```
-✅ Plan created: docs/PLAN.md
+// turbo
+2. **Create Orchestration Plan**
+   - Use `planner` agent for structured task breakdown
+   - Use `explorer-agent` for codebase discovery if needed
+   - Define execution order and dependencies
 
-Do you approve? (Y/N)
-- Y: Start implementation
-- N: I'll revise the plan
-```
+> 🔴 **NO other agents during Phase 1!**
+
+3. **Checkpoint: User Approval**
+
+   ```
+   ✅ Orchestration plan created.
+
+   Agents needed: [list]
+   Estimated scope: [file count]
+
+   Approve to start implementation? (Y/N)
+   ```
 
 > 🔴 **DO NOT proceed to Phase 2 without explicit user approval!**
 
-### PHASE 2: IMPLEMENTATION (Parallel after approval)
+### PHASE 2: Implementation (After Approval)
 
-| Group      | Agents                                    |
-| ---------- | ----------------------------------------- |
-| Foundation | `database-architect`, `security-reviewer` |
-| Core       | `architect`, `mobile-developer`           |
-| Polish     | `tdd-guide`, `devops-engineer`            |
+4. **Execute in Groups**
+
+   | Group | Agents | Domain |
+   | :--------- | :------------------------------- | :------------------------- |
+   | Foundation | `database-architect`, `security-reviewer` | Data layer, security |
+   | Core | `architect`, `backend-specialist`, `frontend-specialist`, `mobile-developer` | Application logic |
+   | Quality | `tdd-guide`, `e2e-runner` | Test coverage |
+   | Operations | `devops-engineer`, `reliability-engineer` | Infrastructure, reliability |
+
+5. **Context Passing** (for every subagent invocation)
+   - Original user request (full text)
+   - All decisions from Socratic questions
+   - Summary of previous agent work
+   - Current plan state
+
+// turbo
+6. **Verification**
+   - Run full test suite
+   - Run lint and type-check
+   - Verify build succeeds
+   - Synthesize results into report
 
 ---
 
 ## Agent Selection Matrix
 
-| Domain      | Keywords                              | Agent(s)                  |
-| ----------- | ------------------------------------- | ------------------------- |
-| Security    | "security", "auth", "vulnerabilities" | `security-reviewer`       |
-| Backend     | "API", "database", "server"           | `database-architect`      |
-| Frontend    | "UI", "component", "page"             | `architect`               |
-| Mobile      | "mobile", "expo", "react native"      | `mobile-developer`        |
-| Testing     | "test", "coverage", "e2e"             | `tdd-guide`, `e2e-runner` |
-| DevOps      | "deploy", "CI/CD", "production"       | `devops-engineer`         |
-| Performance | "slow", "optimize", "speed"           | `performance-optimizer`   |
+| Domain | Keywords | Agent(s) |
+| :----------- | :------------------------------------ | :------------------------------------------------------ |
+| Architecture | "design", "structure", "pattern" | `architect`, `planner` |
+| Backend | "API", "database", "server" | `backend-specialist`, `database-architect` |
+| Frontend | "UI", "component", "page" | `frontend-specialist` |
+| Mobile | "mobile", "expo", "react native" | `mobile-developer` |
+| Security | "security", "auth", "vulnerabilities" | `security-reviewer` |
+| Testing | "test", "coverage", "e2e" | `tdd-guide`, `e2e-runner` |
+| DevOps | "deploy", "CI/CD", "production" | `devops-engineer` |
+| Performance | "slow", "optimize", "speed" | `performance-optimizer` |
+| Reliability | "uptime", "monitoring", "resilience" | `reliability-engineer` |
+| Code Quality | "refactor", "clean", "lint" | `refactor-cleaner`, `code-reviewer` |
 
 ---
 
-## Orchestration Protocol
-
-1. **Analyze Task Domains** — Identify all domains involved
-2. **Phase Detection** — Plan exists? User approved?
-3. **Execute** — Planning or implementation based on phase
-4. **Context Passing** — Pass full context to subagents
-5. **Verification** — Run quality gates
-6. **Synthesize** — Combine outputs into report
-
----
-
-## Context Passing (MANDATORY)
-
-When invoking ANY subagent, include:
-
-1. **Original User Request:** Full text
-2. **Decisions Made:** All answers to Socratic questions
-3. **Previous Agent Work:** Summary of completed work
-4. **Current Plan State:** If plan exists
-
----
-
-## Output Format
+## Output Template
 
 ```markdown
 ## 🎭 Orchestration Complete
 
 ### Agents Invoked
 
-- `architect` → [summary]
-- `database-architect` → [summary]
-- `tdd-guide` → [summary]
+| Agent | Domain | Summary |
+| :---- | :----- | :------ |
+| `[agent]` | [domain] | [what was done] |
 
 ### Deliverables
 
-- [list of created/modified files]
+| Action | File | Agent |
+| :----- | :--- | :---- |
+| Created | `path/to/file` | [agent] |
+| Modified | `path/to/file` | [agent] |
 
 ### Verification
 
-- [test results, lint results]
+- ✅ Tests: [N] passing
+- ✅ Build: successful
+- ✅ Lint: clean
 
 ### Next Steps
 
-- [suggestions for follow-up]
+- [suggestions for follow-up workflows]
 ```
 
 ---
 
-## Examples
+## Governance
 
-```
-/orchestrate build e-commerce platform
-/orchestrate add user authentication
-/orchestrate refactor database layer
-```
+**PROHIBITED:**
+- Skipping Phase 1 (planning) and jumping to implementation
+- Starting Phase 2 without explicit user approval
+- Invoking agents without passing full context
+- Allowing agents to work on overlapping files without coordination
+- Skipping verification after agent work completes
+- Skipping failed steps · proceeding without resolution
+
+**REQUIRED:**
+- 2-Phase protocol (plan → approve → implement)
+- Full context passing to every subagent
+- Domain boundary enforcement
+- Quality verification after all agents complete
+
+---
+
+## Completion Criteria
+
+- [ ] Task domains are analyzed and agents are selected
+- [ ] Phase 1 plan is created and presented
+- [ ] User has explicitly approved Phase 2
+- [ ] All agents have completed their work
+- [ ] Context was passed to every subagent invocation
+- [ ] Verification passes (tests, build, lint)
+- [ ] Final synthesized report is delivered
+
+---
+
+## Related Resources
+
+- **Cross-cutting**: Can be invoked at any SDLC phase for complex tasks
+- **Skills**: `.agent/skills/parallel-agents/SKILL.md` · `.agent/skills/intelligent-routing/SKILL.md`
+- **Agents**: See `.agent/agents/` for full agent catalog

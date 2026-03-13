@@ -1,5 +1,6 @@
 ---
 description: Pre-task research and validation protocol. Market research, gap analysis, and ethics review before implementation.
+version: 2.0.0
 ---
 
 # /quality-gate — Pre-Task Research & Validation Protocol
@@ -12,7 +13,7 @@ description: Pre-task research and validation protocol. Market research, gap ana
 
 ---
 
-## 🔴 Critical Rules
+## Critical Rules
 
 1. **RESEARCH FIRST** — no implementation without validated research
 2. **EVIDENCE-BASED** — all claims backed by market data or competitor analysis
@@ -116,6 +117,44 @@ After approval, proceed to `/plan` for structured task planning.
 
 ---
 
+## Output Template
+
+```markdown
+# Quality Gate Report: [Feature Name]
+
+> Date: [date] · Author: Antigravity AI Kit
+
+## Market Research (≥5 competitors)
+
+| Competitor | Approach | AI/ML | UX Pattern | Automation | Privacy |
+| :--------- | :------- | :---- | :--------- | :--------- | :------ |
+| [leader]   | ...      | ...   | ...        | ...        | ...     |
+
+## Gap Analysis
+
+| Area | Current State | Market Standard | Gap? |
+| :--- | :------------ | :-------------- | :--- |
+| [area] | [state] | [standard] | ✅/⚠️/❌ |
+
+## Enhancement Strategy
+
+[How we improve upon the market baseline]
+
+## Ethics & Safety Review
+
+| Risk | Assessment | Mitigation |
+| :--- | :--------- | :--------- |
+| [risk] | [level] | [strategy] |
+
+## Verdict
+
+✅ Approved / ❌ Rejected — [reasoning]
+
+After approval: proceed to `/plan` for implementation planning.
+```
+
+---
+
 ## Rejection Triggers
 
 If any of these conditions are met, **REJECT** the task:
@@ -148,7 +187,7 @@ If any of these conditions are met, **REJECT** the task:
 
 ## Related Resources
 
-| Resource      | Path                                |
-| :------------ | :---------------------------------- |
-| Plan Workflow | `.agent/workflows/plan.md`          |
-| Retrospective | `.agent/workflows/retrospective.md` |
+- **Previous**: `/brainstorm` (explore options before validation)
+- **Next**: `/plan` (implementation planning after approval)
+- **Related**: `/retrospective` (post-sprint audit applies similar rigor)
+- **Skill**: `.agent/skills/brainstorming/SKILL.md` (Socratic questioning patterns)

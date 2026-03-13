@@ -1,91 +1,136 @@
 ---
 description: Display project and progress status. Current state overview.
+version: 2.0.0
 ---
 
-# /status - Show Status
+# /status — Project Status Overview
 
-$ARGUMENTS
+> **Trigger**: `/status [sub-command]`
+> **Lifecycle**: Cross-cutting — any SDLC phase
+
+> [!NOTE]
+> This is a read-only, informational workflow. It gathers and displays data without modifying anything.
 
 ---
 
-## Task
+## Critical Rules
 
-Show current project and task status.
+1. **Accurate data** — all reported information must reflect the current state, not cached data
+2. **No stale info** — read live data from git, filesystem, and project config
+3. **Health checks** — always include build and test health indicators
+4. **Non-destructive** — this workflow must never modify any files or state
 
-### What It Shows
+---
 
-1. **Project Info**
-   - Project name and path
-   - Tech stack detected
-   - Current features
+## Argument Parsing
 
-2. **Progress Status**
-   - Completed tasks
-   - In-progress tasks
-   - Pending work
+| Command | Action |
+| :----------------- | :------------------------------------------ |
+| `/status` | Full status report (all sections) |
+| `/status brief` | Condensed one-line summary |
+| `/status health` | Health checks only (build, tests, server) |
+| `/status git` | Git status only (branch, changes, commits) |
 
-3. **File Statistics**
-   - Files created/modified
-   - Recent changes
+---
 
+## Steps
+
+// turbo
+1. **Project Detection**
+   - Detect project name, path, and type from config files
+   - Identify the tech stack (framework, language, database, etc.)
+
+// turbo
+2. **Git Status**
+   - Current branch and last commit
+   - Uncommitted changes (staged, unstaged, untracked)
+   - Branch ahead/behind status
+
+// turbo
+3. **Progress Tracking**
+   - Read ROADMAP or task files for sprint/task status
+   - Count completed, in-progress, and pending items
+   - Identify blockers if any
+
+// turbo
 4. **Health Check**
-   - Build status
-   - Test status
-   - Server status (if running)
+   - Build status (can the project compile/build?)
+   - Test status (are tests passing?)
+   - Server status (is the dev server running?)
+
+// turbo
+5. **File Statistics**
+   - Files created and modified (from git)
+   - Recent changes summary
 
 ---
 
-## Output Format
+## Output Template
 
 ```markdown
-=== Project Status ===
+## 📊 Project Status
 
-📁 Project: my-app
-📂 Path: /projects/my-app
-🏷️ Type: Next.js + NestJS + PostgreSQL
+### Project
 
----
+- **Name**: [project name]
+- **Path**: [project path]
+- **Stack**: [language] + [framework] + [database]
 
-🔧 Tech Stack:
-Framework: Next.js
-Backend: NestJS
-Database: PostgreSQL
-Auth: Clerk
+### Git
 
----
+- **Branch**: [branch name]
+- **Last Commit**: [hash] — [message]
+- **Changes**: [N] staged · [N] unstaged · [N] untracked
 
-✅ Completed (5):
-• Initial setup
-• Database schema
-• Auth integration
-• API endpoints
-• Core pages
+### Progress
 
-🔄 In Progress (1):
-• User dashboard (70%)
+✅ Completed ([N]): [list]
+🔄 In Progress ([N]): [list]
+⏳ Pending ([N]): [list]
 
-⏳ Pending (2):
-• Admin panel
-• Email notifications
+### Health
 
----
+| Check | Status |
+| :---- | :----- |
+| Build | ✅ Passing / ❌ Failing |
+| Tests | ✅ [N]/[N] passing / ❌ [N] failures |
+| Server | 🟢 Running / ⚪ Stopped |
 
-📊 Statistics:
-Files created: 47
-Files modified: 12
-Tests passing: 24/24
+### Statistics
 
----
-
-💚 Health: All systems OK
+- Files created: [N]
+- Files modified: [N]
+- Test coverage: [N]%
 ```
 
 ---
 
-## Examples
+## Governance
 
-```
-/status
-/status brief
-/status health
-```
+**PROHIBITED:**
+- Modifying files, state, or configuration
+- Reporting stale or cached data
+- Skipping health checks
+- Skipping failed steps · proceeding without resolution
+
+**REQUIRED:**
+- Live data from git, filesystem, and project config
+- Health check in every full status report
+- Accurate progress tracking from project files
+
+---
+
+## Completion Criteria
+
+- [ ] Project info is detected and displayed
+- [ ] Git status is current and accurate
+- [ ] Progress tracking reflects actual state
+- [ ] Health checks are performed and reported
+
+---
+
+## Related Resources
+
+- **Previous**: `/deploy` (post-deployment monitoring)
+- **Cross-cutting**: Available at any SDLC phase
+- **Related**: `/retrospective` (sprint-level status review)
