@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
@@ -78,7 +78,7 @@ jobs:
             }
 
             // Verify counts match
-            const agentFiles = fs.readdirSync('.agent/agents').filter(f => f.endsWith('.md'));
+            const agentFiles = fs.readdirSync('.agent/agents').filter(f => f.endsWith('.md') && f !== 'README.md');
             if (agentFiles.length !== manifest.capabilities.agents.count) {
               console.error('❌ Agent count mismatch: manifest says', manifest.capabilities.agents.count, 'but found', agentFiles.length);
               errors++;
