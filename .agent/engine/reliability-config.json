@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "SRE reliability configuration — error budget tracking and operational thresholds",
+  "errorBudget": {
+    "enabled": false,
+    "description": "When error budget is exhausted, reliability work takes priority over feature work. Projects opt-in when monitoring infrastructure exists.",
+    "thresholds": {
+      "testFailureRatePercent": 5,
+      "buildFailureRatePercent": 2,
+      "deployRollbackRatePercent": 10
+    },
+    "resetCadence": "sprint"
+  }
+}

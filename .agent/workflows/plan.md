@@ -1,6 +1,10 @@
 ---
 description: Create implementation plan. Invokes planner agent for structured task breakdown.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: plan
+agents: [planner]
+skills: [plan-writing, brainstorming]
+commit-types: [docs]
 ---
 
 # /plan — Implementation Planning

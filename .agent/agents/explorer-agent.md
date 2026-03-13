@@ -1,3 +1,14 @@
+---
+name: explorer-agent
+description: "Codebase discovery, architectural analysis, and onboarding specialist"
+domain: discovery
+triggers: [explore, discover, analyze, map, onboard]
+model: opus
+authority: read-only
+reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
+---
+
 # Explorer Agent
 
 > **Platform**: Antigravity AI Kit

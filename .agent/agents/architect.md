@@ -5,6 +5,7 @@ model: opus
 authority: design-authority
 reports-to: alignment-engine
 integration: 3-role-architecture
+relatedWorkflows: [orchestrate]
 ---
 
 # Antigravity AI Kit — Architect Agent

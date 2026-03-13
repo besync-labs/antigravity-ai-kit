@@ -4,6 +4,7 @@ description: Dead code cleanup and refactoring specialist. Identifies and remove
 model: opus
 authority: cleanup-only
 reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
 ---
 
 # Antigravity AI Kit — Refactor Cleaner Agent

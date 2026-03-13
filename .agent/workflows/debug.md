@@ -1,6 +1,9 @@
 ---
 description: Systematic debugging workflow. Activates DEBUG mode for problem investigation.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: reactive
+skills: [debugging-strategies]
+commit-types: [fix]
 ---
 
 # /debug — Systematic Problem Investigation

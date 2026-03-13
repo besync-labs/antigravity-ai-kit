@@ -4,6 +4,7 @@ description: Security vulnerability analysis and comprehensive security audit sp
 model: opus
 authority: security-audit
 reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
 ---
 
 # Antigravity AI Kit — Security Reviewer Agent

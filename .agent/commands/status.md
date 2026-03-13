@@ -1,6 +1,7 @@
 ---
 name: status
 description: Display current session status and context
+workflow: status
 ---
 
 # /status

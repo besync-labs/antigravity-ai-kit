@@ -1,6 +1,10 @@
 ---
 description: Multi-agent orchestration for complex tasks requiring multiple specialists.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: reactive
+agents: [planner, explorer-agent]
+skills: [parallel-agents, intelligent-routing]
+commit-types: [feat, refactor, fix]
 ---
 
 # /orchestrate — Multi-Agent Coordination

@@ -1,6 +1,9 @@
 ---
 description: Write and run tests systematically.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: verify
+skills: [testing-patterns, webapp-testing]
+commit-types: [test]
 ---
 
 # /test — Systematic Test Writing & Execution

@@ -2,6 +2,7 @@
 name: code-review
 description: Perform comprehensive code review on files or directories
 invokes: code-reviewer
+workflow: review
 ---
 
 # /code-review

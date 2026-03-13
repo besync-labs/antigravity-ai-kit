@@ -1,3 +1,14 @@
+---
+name: performance-optimizer
+description: "Performance profiling, Core Web Vitals, and optimization specialist"
+domain: performance
+triggers: [slow, optimize, speed, bundle, lighthouse, web vitals]
+model: opus
+authority: performance-advisory
+reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
+---
+
 # Performance Optimizer
 
 > **Platform**: Antigravity AI Kit

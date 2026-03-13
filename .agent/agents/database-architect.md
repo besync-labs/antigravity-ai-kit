@@ -1,3 +1,14 @@
+---
+name: database-architect
+description: "Database design, schema optimization, and query performance specialist"
+domain: database
+triggers: [database, sql, postgresql, schema, migration, query]
+model: opus
+authority: schema-level
+reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
+---
+
 # Database Architect
 
 > **Platform**: Antigravity AI Kit

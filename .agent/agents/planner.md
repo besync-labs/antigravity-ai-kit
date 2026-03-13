@@ -4,6 +4,7 @@ description: Expert planning specialist for feature implementation. Use for comp
 model: opus
 authority: read-only-analysis
 reports-to: alignment-engine
+relatedWorkflows: [plan, orchestrate]
 ---
 
 # Antigravity AI Kit — Planner Agent

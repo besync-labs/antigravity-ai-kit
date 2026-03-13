@@ -52,6 +52,14 @@
       "artifact": null,
       "startedAt": null,
       "completedAt": null
+    },
+    "MAINTAIN": {
+      "status": "pending",
+      "description": "Post-deploy monitoring and operational handoff",
+      "workflow": "status",
+      "artifact": null,
+      "startedAt": null,
+      "completedAt": null
     }
   },
   "transitions": [
@@ -111,9 +119,27 @@
     },
     {
       "from": "DEPLOY",
+      "to": "MAINTAIN",
+      "trigger": "Deployment health check passes",
+      "guard": "Health check verified healthy"
+    },
+    {
+      "from": "DEPLOY",
+      "to": "REVIEW",
+      "trigger": "Deployment health check fails",
+      "guard": "Health check failure detected"
+    },
+    {
+      "from": "IMPLEMENT",
+      "to": "PLAN",
+      "trigger": "Unexpected complexity discovered",
+      "guard": "Implementation reveals plan inadequacy"
+    },
+    {
+      "from": "MAINTAIN",
       "to": "IDLE",
-      "trigger": "Deployment complete",
-      "guard": "Health check passes"
+      "trigger": "Monitoring period complete",
+      "guard": "No issues detected during observation"
     }
   ],
   "history": []

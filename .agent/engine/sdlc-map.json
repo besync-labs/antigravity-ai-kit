@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "Machine-readable SDLC phase-to-workflow mapping with bidirectional traversal",
+  "phases": {
+    "discover": {
+      "description": "Requirement exploration and validation",
+      "workflows": ["brainstorm", "quality-gate"],
+      "previous": null,
+      "next": "plan"
+    },
+    "plan": {
+      "description": "Structured implementation planning",
+      "workflows": ["plan"],
+      "previous": "discover",
+      "next": "build"
+    },
+    "build": {
+      "description": "Feature implementation and scaffolding",
+      "workflows": ["create", "enhance", "preview", "ui-ux-pro-max"],
+      "previous": "plan",
+      "next": "verify"
+    },
+    "verify": {
+      "description": "Testing and quality gate validation",
+      "workflows": ["test", "review"],
+      "previous": "build",
+      "next": "ship"
+    },
+    "ship": {
+      "description": "Production deployment with pre-flight checks",
+      "workflows": ["deploy"],
+      "previous": "verify",
+      "next": "evaluate"
+    },
+    "evaluate": {
+      "description": "Post-sprint retrospective audit",
+      "workflows": ["retrospective"],
+      "previous": "ship",
+      "next": "discover"
+    }
+  },
+  "reactive": ["debug", "orchestrate"],
+  "crossCutting": ["status"]
+}

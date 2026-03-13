@@ -1,7 +1,7 @@
 # Antigravity AI Kit — Skills
 
 > **Purpose**: Workflow definitions and domain knowledge extensions
-> **Count**: 26 Skills (4 Operational + 3 Orchestration + 12 Domain + 7 Development)
+> **Count**: 31 Skills (5 Operational + 4 Orchestration + 13 Domain + 9 Development)
 
 ---
 
@@ -25,7 +25,7 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 
 ---
 
-## Operational Skills (4)
+## Operational Skills (5)
 
 | Skill                                               | Purpose                   |
 | :-------------------------------------------------- | :------------------------ |
@@ -33,20 +33,22 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 | [continuous-learning](continuous-learning/SKILL.md) | Pattern extraction (PAAL) |
 | [strategic-compact](strategic-compact/SKILL.md)     | Context window management |
 | [eval-harness](eval-harness/SKILL.md)               | Performance evaluation    |
+| [context-budget](context-budget/SKILL.md)           | LLM token budget mgmt    |
 
 ---
 
-## Orchestration Skills (3)
+## Orchestration Skills (4)
 
 | Skill                                               | Purpose                     |
 | :-------------------------------------------------- | :-------------------------- |
 | [intelligent-routing](intelligent-routing/SKILL.md) | Automatic agent selection   |
 | [parallel-agents](parallel-agents/SKILL.md)         | Multi-agent orchestration   |
 | [behavioral-modes](behavioral-modes/SKILL.md)       | Adaptive AI operation modes |
+| [mcp-integration](mcp-integration/SKILL.md)         | MCP server integration      |
 
 ---
 
-## Domain Skills (12)
+## Domain Skills (13)
 
 ### Architecture & Design
 
@@ -57,6 +59,7 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 | [database-design](database-design/SKILL.md)     | Schema optimization      |
 | [frontend-patterns](frontend-patterns/SKILL.md) | React/component patterns |
 | [nodejs-patterns](nodejs-patterns/SKILL.md)     | Backend patterns         |
+| [i18n-localization](i18n-localization/SKILL.md) | Internationalization     |
 
 ### Code Quality
 
@@ -77,7 +80,7 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 
 ---
 
-## Development Skills (7)
+## Development Skills (9)
 
 | Skill                                                   | Purpose                       |
 | :------------------------------------------------------ | :---------------------------- |
@@ -88,6 +91,8 @@ Skills are automatically loaded based on task context. Agents invoke relevant sk
 | [performance-profiling](performance-profiling/SKILL.md) | Core Web Vitals optimization  |
 | [brainstorming](brainstorming/SKILL.md)                 | Socratic discovery protocol   |
 | [plan-writing](plan-writing/SKILL.md)                   | Structured task breakdown     |
+| [shell-conventions](shell-conventions/SKILL.md)         | PowerShell/Bash conventions   |
+| [ui-ux-pro-max](ui-ux-pro-max/SKILL.md)                | Premium UI/UX design system   |
 
 ---
 

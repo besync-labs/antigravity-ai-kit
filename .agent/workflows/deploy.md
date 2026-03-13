@@ -1,6 +1,9 @@
 ---
 description: Production deployment with pre-flight checks, execution, and verification.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: ship
+skills: [deployment-procedures]
+commit-types: [chore, fix]
 ---
 
 # /deploy — Production Deployment

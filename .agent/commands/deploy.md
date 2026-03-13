@@ -1,5 +1,6 @@
 ---
 description: Deploy application to target environment
+workflow: deploy
 ---
 
 # /deploy Command

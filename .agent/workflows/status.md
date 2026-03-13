@@ -1,6 +1,9 @@
 ---
 description: Display project and progress status. Current state overview.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: cross-cutting
+skills: [verification-loop]
+commit-types: [chore]
 ---
 
 # /status — Project Status Overview
@@ -10,6 +13,9 @@ version: 2.0.0
 
 > [!NOTE]
 > This is a read-only, informational workflow. It gathers and displays data without modifying anything.
+
+> [!TIP]
+> Skill reference: `.agent/skills/verification-loop/SKILL.md` — health checks and continuous quality gates
 
 ---
 

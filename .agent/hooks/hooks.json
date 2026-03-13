@@ -6,12 +6,12 @@
       "description": "Executed at the beginning of every AI session",
       "enforcement": "runtime",
       "actions": [
-        "Load session-context.md and session-state.json",
-        "Read engine/loading-rules.json for context budget",
-        "Read engine/workflow-state.json for lifecycle phase",
-        "Verify git status is clean or understood",
-        "Load domain-relevant agents and skills via loading-rules.json",
-        "Present session state to user before proceeding"
+        { "action": "Load session-context.md and session-state.json", "severity": "critical", "onFailure": "block" },
+        { "action": "Read engine/loading-rules.json for context budget", "severity": "high", "onFailure": "warn" },
+        { "action": "Read engine/workflow-state.json for lifecycle phase", "severity": "high", "onFailure": "warn" },
+        { "action": "Verify git status is clean or understood", "severity": "medium", "onFailure": "warn" },
+        { "action": "Load domain-relevant agents and skills via loading-rules.json", "severity": "high", "onFailure": "warn" },
+        { "action": "Present session state to user before proceeding", "severity": "critical", "onFailure": "block" }
       ]
     },
     {
@@ -19,12 +19,12 @@
       "description": "Executed at the end of every AI session",
       "enforcement": "runtime",
       "actions": [
-        "Update session-context.md with handoff notes",
-        "Update session-state.json with metadata",
-        "Update engine/workflow-state.json with phase progress",
-        "Trigger continuous-learning skill for pattern extraction",
-        "Update docs/ROADMAP.md if sprint items changed",
-        "Commit tracking files together"
+        { "action": "Update session-context.md with handoff notes", "severity": "critical", "onFailure": "block" },
+        { "action": "Update session-state.json with metadata", "severity": "critical", "onFailure": "block" },
+        { "action": "Update engine/workflow-state.json with phase progress", "severity": "high", "onFailure": "warn" },
+        { "action": "Trigger continuous-learning skill for pattern extraction", "severity": "low", "onFailure": "log" },
+        { "action": "Update docs/ROADMAP.md if sprint items changed", "severity": "medium", "onFailure": "warn" },
+        { "action": "Commit tracking files together", "severity": "high", "onFailure": "warn" }
       ]
     },
     {
@@ -32,17 +32,19 @@
       "description": "Verification before any git commit",
       "enforcement": "runtime",
       "actions": [
-        "Verify build passes (npm run build)",
-        "Verify lint passes (npm run lint)",
-        "Verify tests pass (npm test)",
-        "Check for console.log statements in production code",
-        "Verify no TypeScript errors (npx tsc --noEmit)"
+        { "action": "Verify build passes (npm run build)", "severity": "critical", "onFailure": "block" },
+        { "action": "Verify lint passes (npm run lint)", "severity": "critical", "onFailure": "block" },
+        { "action": "Verify tests pass (npm test)", "severity": "critical", "onFailure": "block" },
+        { "action": "Check for console.log statements in production code", "severity": "medium", "onFailure": "warn" },
+        { "action": "Verify no TypeScript errors (npx tsc --noEmit)", "severity": "critical", "onFailure": "block" }
       ]
     },
     {
       "event": "secret-detection",
       "description": "Scan for accidentally committed secrets",
       "enforcement": "git-hook",
+      "severity": "critical",
+      "onFailure": "block",
       "referenceScript": ".githooks/pre-commit",
       "patterns": [
         "sk-[a-zA-Z0-9]{20,}",
@@ -60,10 +62,10 @@
       "description": "Triggered when workflow lifecycle phase changes",
       "enforcement": "runtime",
       "actions": [
-        "Validate transition guard from engine/workflow-state.json",
-        "Record transition in workflow-state.json history",
-        "Load/unload agents appropriate for new phase",
-        "Notify user of phase change with next suggested action"
+        { "action": "Validate transition guard from engine/workflow-state.json", "severity": "critical", "onFailure": "block" },
+        { "action": "Record transition in workflow-state.json history", "severity": "high", "onFailure": "warn" },
+        { "action": "Load/unload agents appropriate for new phase", "severity": "high", "onFailure": "warn" },
+        { "action": "Notify user of phase change with next suggested action", "severity": "medium", "onFailure": "warn" }
       ]
     },
     {
@@ -71,10 +73,10 @@
       "description": "Triggered at sprint boundaries for health assessment",
       "enforcement": "runtime",
       "actions": [
-        "Sprint orchestrator generates health report",
-        "Review velocity metrics against plan",
-        "Identify carry-over candidates",
-        "Produce sprint retrospective if ending"
+        { "action": "Sprint orchestrator generates health report", "severity": "high", "onFailure": "warn" },
+        { "action": "Review velocity metrics against plan", "severity": "medium", "onFailure": "warn" },
+        { "action": "Identify carry-over candidates", "severity": "medium", "onFailure": "log" },
+        { "action": "Produce sprint retrospective if ending", "severity": "high", "onFailure": "warn" }
       ]
     }
   ]

@@ -4,6 +4,7 @@ description: Expert code review specialist ensuring high standards of quality an
 model: opus
 authority: approval-gate
 reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
 ---
 
 # Antigravity AI Kit — Code Reviewer Agent

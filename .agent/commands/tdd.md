@@ -2,6 +2,7 @@
 name: tdd
 description: Start test-driven development workflow for a component
 invokes: tdd-guide
+workflow: test
 ---
 
 # /tdd

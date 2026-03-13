@@ -4,6 +4,7 @@ description: End-to-end testing specialist using Playwright for comprehensive us
 model: opus
 authority: test-execution
 reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
 ---
 
 # Antigravity AI Kit — E2E Runner Agent

@@ -1,6 +1,9 @@
 ---
 description: Tier-1 Retrospective Quality Audit — full product, architecture, and pipeline review against market standards
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: evaluate
+skills: [verification-loop]
+commit-types: [docs, chore]
 ---
 
 # /retrospective — Tier-1 Retrospective Quality Audit

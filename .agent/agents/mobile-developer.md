@@ -1,3 +1,14 @@
+---
+name: mobile-developer
+description: "React Native/Expo mobile development specialist"
+domain: mobile
+triggers: [mobile, react native, expo, ios, android]
+model: opus
+authority: mobile-code
+reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
+---
+
 # Mobile Developer
 
 > **Platform**: Antigravity AI Kit

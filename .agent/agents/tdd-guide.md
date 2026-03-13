@@ -4,6 +4,7 @@ description: Test-Driven Development specialist enforcing write-tests-first meth
 model: opus
 authority: tdd-enforcement
 reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
 ---
 
 # Antigravity AI Kit — TDD Guide Agent

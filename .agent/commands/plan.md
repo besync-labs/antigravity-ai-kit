@@ -2,6 +2,7 @@
 name: plan
 description: Create a comprehensive implementation plan for a feature or change
 invokes: planner
+workflow: plan
 ---
 
 # /plan

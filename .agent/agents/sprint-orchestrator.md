@@ -1,3 +1,13 @@
+---
+name: sprint-orchestrator
+description: "Sprint planning, velocity tracking, and autonomous task prioritization specialist"
+domain: planning
+triggers: [sprint, velocity, backlog, milestone, retrospective, prioritize]
+model: opus
+authority: sprint-management
+reports-to: alignment-engine
+---
+
 # Sprint Orchestrator Agent
 
 > **Domain**: Sprint planning, velocity tracking, backlog management, retrospective analysis, autonomous task prioritization  

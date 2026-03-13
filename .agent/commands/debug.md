@@ -1,5 +1,6 @@
 ---
 description: Debug issues systematically
+workflow: debug
 ---
 
 # /debug Command

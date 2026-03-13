@@ -1,6 +1,9 @@
 ---
 description: Code review workflow. Sequential quality gate pipeline — lint, type-check, test, security scan, and build verification.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: verify
+skills: [verification-loop]
+commit-types: [fix, refactor]
 ---
 
 # /review — Code Review Quality Gate

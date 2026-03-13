@@ -1,6 +1,9 @@
 ---
 description: Premium UI/UX design and implementation workflow.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: build
+skills: [ui-ux-pro-max, frontend-patterns, mobile-design]
+commit-types: [feat, refactor]
 ---
 
 # /ui-ux-pro-max — Premium UI/UX Design & Implementation

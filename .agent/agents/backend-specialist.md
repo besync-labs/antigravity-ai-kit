@@ -1,3 +1,14 @@
+---
+name: backend-specialist
+description: "Node.js backend architecture, API design, middleware patterns specialist"
+domain: backend
+triggers: [backend, api, server, nodejs, nestjs, express, middleware]
+model: opus
+authority: backend-code
+reports-to: alignment-engine
+relatedWorkflows: [orchestrate]
+---
+
 # Backend Specialist Agent
 
 > **Domain**: Node.js backend architecture, API design, middleware patterns, error handling, logging, service layer patterns  

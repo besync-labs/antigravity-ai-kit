@@ -1,7 +1,7 @@
 # Antigravity AI Kit — Agents
 
 > **Purpose**: Specialized sub-agents for task delegation
-> **Count**: 15 Core Agents
+> **Count**: 19 Core Agents
 
 ---
 
@@ -26,6 +26,8 @@ Agents are specialized personas that handle delegated tasks with focused experti
 | 🔍 **Code Reviewer**        | `code-reviewer.md`        | Quality & security review       |
 | 🧪 **TDD Guide**            | `tdd-guide.md`            | Test-driven development         |
 | 🔧 **Build Error Resolver** | `build-error-resolver.md` | Rapid build fixes               |
+| 🖥️ **Backend Specialist**   | `backend-specialist.md`   | Node.js, NestJS, API design     |
+| 🎨 **Frontend Specialist**  | `frontend-specialist.md`  | React, Next.js, UI architecture |
 
 ### Quality & Security Agents
 
@@ -37,20 +39,22 @@ Agents are specialized personas that handle delegated tasks with focused experti
 
 ### Infrastructure Agents
 
-| Agent                     | File                    | Purpose                       |
-| :------------------------ | :---------------------- | :---------------------------- |
-| 📱 **Mobile Developer**   | `mobile-developer.md`   | React Native/Expo development |
-| 🗄️ **Database Architect** | `database-architect.md` | Schema design, queries        |
-| 🚀 **DevOps Engineer**    | `devops-engineer.md`    | CI/CD, deployment             |
+| Agent                        | File                       | Purpose                       |
+| :--------------------------- | :------------------------- | :---------------------------- |
+| 📱 **Mobile Developer**      | `mobile-developer.md`      | React Native/Expo development |
+| 🗄️ **Database Architect**    | `database-architect.md`    | Schema design, queries        |
+| 🚀 **DevOps Engineer**       | `devops-engineer.md`       | CI/CD, deployment             |
+| 🛡️ **Reliability Engineer**  | `reliability-engineer.md`  | SRE, production readiness     |
 
 ### Maintenance & Discovery Agents
 
-| Agent                   | File                  | Purpose            |
-| :---------------------- | :-------------------- | :----------------- |
-| 🧹 **Refactor Cleaner** | `refactor-cleaner.md` | Dead code cleanup  |
-| 📚 **Doc Updater**      | `doc-updater.md`      | Documentation sync |
-| 🧠 **Knowledge Agent**  | `knowledge-agent.md`  | RAG retrieval      |
-| 🔭 **Explorer Agent**   | `explorer-agent.md`   | Codebase discovery |
+| Agent                      | File                     | Purpose                     |
+| :------------------------- | :----------------------- | :-------------------------- |
+| 🧹 **Refactor Cleaner**    | `refactor-cleaner.md`    | Dead code cleanup           |
+| 📚 **Doc Updater**         | `doc-updater.md`         | Documentation sync          |
+| 🧠 **Knowledge Agent**     | `knowledge-agent.md`     | RAG retrieval               |
+| 🔭 **Explorer Agent**      | `explorer-agent.md`      | Codebase discovery          |
+| 📊 **Sprint Orchestrator** | `sprint-orchestrator.md` | Sprint planning & velocity  |
 
 ---
 

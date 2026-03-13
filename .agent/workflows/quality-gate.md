@@ -1,6 +1,9 @@
 ---
 description: Pre-task research and validation protocol. Market research, gap analysis, and ethics review before implementation.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: discover
+skills: [brainstorming]
+commit-types: [docs, chore]
 ---
 
 # /quality-gate — Pre-Task Research & Validation Protocol

@@ -1,6 +1,9 @@
 ---
 description: Preview server management. Start, stop, and check local development server.
-version: 2.0.0
+version: 2.1.0
+sdlc-phase: build
+skills: [shell-conventions]
+commit-types: [chore]
 ---
 
 # /preview — Preview Server Management
@@ -10,6 +13,9 @@ version: 2.0.0
 
 > [!NOTE]
 > This is a utility workflow for managing local development servers. Server operations are interactive and require user confirmation.
+
+> [!TIP]
+> Skill reference: `.agent/skills/shell-conventions/SKILL.md` — PowerShell/Bash conventions for server commands
 
 ---
 

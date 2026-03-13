@@ -94,5 +94,27 @@
     "maxSkillsPerSession": 6,
     "warningThresholdPercent": 80,
     "description": "Limits prevent context overflow. The kit selects only domain-relevant agents and skills for each task, keeping within the LLM context window."
-  }
+  },
+  "workflowBindings": [
+    { "workflow": "brainstorm", "loadAgents": [], "loadSkills": ["brainstorming"], "bindingType": "inferred" },
+    { "workflow": "quality-gate", "loadAgents": [], "loadSkills": ["brainstorming"], "bindingType": "inferred" },
+    { "workflow": "plan", "loadAgents": ["planner"], "loadSkills": ["plan-writing", "brainstorming"], "bindingType": "explicit" },
+    { "workflow": "create", "loadAgents": [], "loadSkills": ["app-builder", "clean-code"], "bindingType": "inferred" },
+    { "workflow": "enhance", "loadAgents": [], "loadSkills": ["clean-code", "testing-patterns"], "bindingType": "inferred" },
+    { "workflow": "preview", "loadAgents": [], "loadSkills": ["shell-conventions"], "bindingType": "inferred" },
+    { "workflow": "ui-ux-pro-max", "loadAgents": [], "loadSkills": ["ui-ux-pro-max", "frontend-patterns", "mobile-design"], "bindingType": "inferred" },
+    { "workflow": "test", "loadAgents": [], "loadSkills": ["testing-patterns", "webapp-testing"], "bindingType": "inferred" },
+    { "workflow": "review", "loadAgents": [], "loadSkills": ["verification-loop"], "bindingType": "inferred" },
+    { "workflow": "deploy", "loadAgents": [], "loadSkills": ["deployment-procedures"], "bindingType": "inferred" },
+    { "workflow": "debug", "loadAgents": [], "loadSkills": ["debugging-strategies"], "bindingType": "inferred" },
+    {
+      "workflow": "orchestrate",
+      "loadAgents": ["planner", "explorer-agent"],
+      "loadSkills": ["parallel-agents", "intelligent-routing"],
+      "bindingType": "explicit",
+      "dynamicAgentPool": ["architect", "backend-specialist", "frontend-specialist", "mobile-developer", "database-architect", "security-reviewer", "tdd-guide", "e2e-runner", "devops-engineer", "performance-optimizer", "reliability-engineer", "refactor-cleaner", "code-reviewer"]
+    },
+    { "workflow": "retrospective", "loadAgents": [], "loadSkills": ["verification-loop"], "bindingType": "inferred" },
+    { "workflow": "status", "loadAgents": [], "loadSkills": ["verification-loop"], "bindingType": "inferred" }
+  ]
 }
