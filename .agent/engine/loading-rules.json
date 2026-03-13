@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "defaultLoad": [
+    "rules.md",
+    "manifest.json",
+    "engine/workflow-state.json"
+  ],
+  "sessionLoad": [
+    "session-context.md",
+    "session-state.json"
+  ],
+  "domainRules": [
+    {
+      "domain": "security",
+      "keywords": ["auth", "security", "vulnerability", "password", "jwt", "oauth", "cors", "xss", "csrf", "injection"],
+      "loadAgents": ["security-reviewer"],
+      "loadSkills": ["security-practices"]
+    },
+    {
+      "domain": "testing",
+      "keywords": ["test", "coverage", "e2e", "playwright", "jest", "vitest", "tdd", "unit test", "integration test"],
+      "loadAgents": ["tdd-guide", "e2e-runner"],
+      "loadSkills": ["testing-patterns", "webapp-testing"]
+    },
+    {
+      "domain": "architecture",
+      "keywords": ["design", "structure", "pattern", "ddd", "hexagonal", "layer", "module", "monolith", "microservice"],
+      "loadAgents": ["architect"],
+      "loadSkills": ["architecture", "clean-code"]
+    },
+    {
+      "domain": "frontend",
+      "keywords": ["react", "next.js", "vue", "component", "css", "styling", "responsive", "a11y", "accessibility", "ui", "ux"],
+      "loadAgents": ["frontend-specialist"],
+      "loadSkills": ["frontend-patterns", "mobile-design"]
+    },
+    {
+      "domain": "backend",
+      "keywords": ["api", "server", "node", "nestjs", "express", "middleware", "rest", "graphql", "endpoint"],
+      "loadAgents": ["backend-specialist"],
+      "loadSkills": ["api-patterns", "nodejs-patterns"]
+    },
+    {
+      "domain": "database",
+      "keywords": ["database", "sql", "postgresql", "prisma", "migration", "schema", "query", "orm", "redis"],
+      "loadAgents": ["database-architect"],
+      "loadSkills": ["database-design"]
+    },
+    {
+      "domain": "devops",
+      "keywords": ["deploy", "ci", "cd", "docker", "kubernetes", "railway", "vercel", "github actions", "pipeline"],
+      "loadAgents": ["devops-engineer"],
+      "loadSkills": ["docker-patterns", "deployment-procedures"]
+    },
+    {
+      "domain": "performance",
+      "keywords": ["slow", "optimize", "speed", "bundle", "lighthouse", "web vitals", "lcp", "cls", "fid", "cache"],
+      "loadAgents": ["performance-optimizer"],
+      "loadSkills": ["performance-profiling"]
+    },
+    {
+      "domain": "mobile",
+      "keywords": ["mobile", "react native", "expo", "ios", "android", "app store", "native"],
+      "loadAgents": ["mobile-developer"],
+      "loadSkills": ["mobile-design"]
+    },
+    {
+      "domain": "documentation",
+      "keywords": ["docs", "readme", "document", "api docs", "jsdoc", "changelog"],
+      "loadAgents": ["doc-updater"],
+      "loadSkills": []
+    },
+    {
+      "domain": "planning",
+      "keywords": ["plan", "roadmap", "sprint", "milestone", "task", "breakdown", "estimate"],
+      "loadAgents": ["planner", "sprint-orchestrator"],
+      "loadSkills": ["plan-writing", "brainstorming"]
+    },
+    {
+      "domain": "debugging",
+      "keywords": ["bug", "error", "fix", "crash", "exception", "stack trace", "not working"],
+      "loadAgents": ["build-error-resolver"],
+      "loadSkills": ["debugging-strategies"]
+    },
+    {
+      "domain": "refactoring",
+      "keywords": ["refactor", "clean", "improve", "dead code", "technical debt", "simplify"],
+      "loadAgents": ["refactor-cleaner"],
+      "loadSkills": ["clean-code"]
+    }
+  ],
+  "contextBudget": {
+    "maxAgentsPerSession": 4,
+    "maxSkillsPerSession": 6,
+    "warningThresholdPercent": 80,
+    "description": "Limits prevent context overflow. The kit selects only domain-relevant agents and skills for each task, keeping within the LLM context window."
+  }
+}

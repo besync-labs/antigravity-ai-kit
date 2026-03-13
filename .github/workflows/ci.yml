@@ -1,0 +1,173 @@
+name: Antigravity AI Kit CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  structural-integrity:
+    name: Structural Integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+  manifest-validation:
+    name: Manifest Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate manifest.json
+        run: |
+          echo "🔍 Validating manifest.json..."
+          node -e "
+            const manifest = require('./.agent/manifest.json');
+            const fs = require('fs');
+            const path = require('path');
+
+            let errors = 0;
+
+            // Verify agent files exist
+            for (const agent of manifest.capabilities.agents.items) {
+              const agentPath = path.join('.agent', agent.file);
+              if (!fs.existsSync(agentPath)) {
+                console.error('❌ Missing agent file:', agentPath);
+                errors++;
+              }
+            }
+
+            // Verify skill directories exist
+            for (const skill of manifest.capabilities.skills.items) {
+              const skillPath = path.join('.agent', skill.directory, 'SKILL.md');
+              if (!fs.existsSync(skillPath)) {
+                console.error('❌ Missing skill:', skillPath);
+                errors++;
+              }
+            }
+
+            // Verify workflow files exist
+            for (const workflow of manifest.capabilities.workflows.items) {
+              const wfPath = path.join('.agent', workflow.file);
+              if (!fs.existsSync(wfPath)) {
+                console.error('❌ Missing workflow:', wfPath);
+                errors++;
+              }
+            }
+
+            // Verify counts match
+            const agentFiles = fs.readdirSync('.agent/agents').filter(f => f.endsWith('.md'));
+            if (agentFiles.length !== manifest.capabilities.agents.count) {
+              console.error('❌ Agent count mismatch: manifest says', manifest.capabilities.agents.count, 'but found', agentFiles.length);
+              errors++;
+            }
+
+            if (errors > 0) {
+              console.error('\\n❌ Manifest validation failed with', errors, 'error(s)');
+              process.exit(1);
+            }
+
+            console.log('✅ Manifest validation passed');
+            console.log('   Agents:', manifest.capabilities.agents.count);
+            console.log('   Skills:', manifest.capabilities.skills.count);
+            console.log('   Workflows:', manifest.capabilities.workflows.count);
+          "
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan for prompt injection patterns
+        run: |
+          echo "🔍 Scanning for prompt injection patterns..."
+          FOUND=0
+
+          # Check for known prompt injection patterns
+          if grep -ril "ignore previous instructions" .agent/ 2>/dev/null; then
+            echo "❌ Found 'ignore previous instructions' pattern"
+            FOUND=1
+          fi
+
+          if grep -ril "disregard all rules" .agent/ 2>/dev/null; then
+            echo "❌ Found 'disregard all rules' pattern"
+            FOUND=1
+          fi
+
+          if grep -ril "you are now" .agent/ 2>/dev/null | grep -v SKILL.md | grep -v README; then
+            echo "⚠️ Found 'you are now' pattern (verify context)"
+            FOUND=1
+          fi
+
+          if [ "$FOUND" -eq 1 ]; then
+            echo "❌ Security scan detected potential issues"
+            exit 1
+          fi
+
+          echo "✅ No prompt injection patterns detected"
+
+      - name: Scan for hardcoded secrets
+        run: |
+          echo "🔍 Scanning for hardcoded secrets..."
+          FOUND=0
+
+          if grep -rn "sk-[a-zA-Z0-9]\{20,\}" .agent/ 2>/dev/null; then
+            echo "❌ Found potential API key"
+            FOUND=1
+          fi
+
+          if grep -rn "AKIA[A-Z0-9]\{16\}" .agent/ 2>/dev/null; then
+            echo "❌ Found potential AWS key"
+            FOUND=1
+          fi
+
+          if [ "$FOUND" -eq 1 ]; then
+            echo "❌ Secret scan detected potential issues"
+            exit 1
+          fi
+
+          echo "✅ No hardcoded secrets detected"
+
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: |
+            .agent/**/*.md
+            README.md
+            docs/**/*.md
+        continue-on-error: true

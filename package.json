@@ -1,12 +1,14 @@
 {
-  "name": "@emredursun/antigravity-ai-kit",
-  "version": "2.0.0",
-  "description": "🚀 Trust-Grade AI development framework - 17 Agents, 26 Skills, 31 Commands, 11 Workflows",
+  "name": "antigravity-ai-kit",
+  "version": "2.1.0",
+  "description": "🚀 Trust-Grade AI development framework — 17 Agents, 27 Skills, 31 Commands, 11 Workflows. Transform your IDE into an autonomous engineering team.",
   "main": "bin/ag-kit.js",
   "bin": {
     "ag-kit": "./bin/ag-kit.js"
   },
   "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "postinstall": "echo '✅ Antigravity AI Kit installed! Run: ag-kit init'"
   },
   "keywords": [
@@ -27,14 +29,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emredursun/antigravity-ai-kit.git"
+    "url": "git+https://github.com/besync-labs/antigravity-ai-kit.git"
   },
   "bugs": {
-    "url": "https://github.com/emredursun/antigravity-ai-kit/issues"
+    "url": "https://github.com/besync-labs/antigravity-ai-kit/issues"
   },
-  "homepage": "https://github.com/emredursun/antigravity-ai-kit#readme",
+  "homepage": "https://github.com/besync-labs/antigravity-ai-kit#readme",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "files": [
     "bin/",

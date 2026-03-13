@@ -1,0 +1,65 @@
+#!/bin/sh
+# Antigravity AI Kit — Pre-commit Hook
+# Detects accidentally committed secrets and sensitive patterns
+# Install: git config core.hooksPath .githooks
+
+echo "🔒 Antigravity: Running secret detection scan..."
+
+# Define patterns to detect
+PATTERNS=(
+    'sk-[a-zA-Z0-9]\{20,\}'
+    'AKIA[A-Z0-9]\{16\}'
+    'ghp_[a-zA-Z0-9]\{36\}'
+    'gho_[a-zA-Z0-9]\{36\}'
+    'AWS_SECRET_ACCESS_KEY\s*='
+    'PRIVATE_KEY'
+)
+
+# Patterns with values
+VALUE_PATTERNS=(
+    'api_key\s*=\s*['"'"'"][^'"'"'"]*['"'"'"]'
+    'password\s*=\s*['"'"'"][^'"'"'"]*['"'"'"]'
+    'secret\s*=\s*['"'"'"][^'"'"'"]*['"'"'"]'
+    'token\s*=\s*['"'"'"][^'"'"'"]*['"'"'"]'
+)
+
+FOUND=0
+
+# Check staged files for secret patterns
+for PATTERN in "${PATTERNS[@]}"; do
+    MATCHES=$(git diff --cached --diff-filter=ACM -S "$PATTERN" --name-only 2>/dev/null)
+    if [ -n "$MATCHES" ]; then
+        echo "❌ BLOCKED: Potential secret detected matching pattern: $PATTERN"
+        echo "   Files: $MATCHES"
+        FOUND=1
+    fi
+done
+
+for PATTERN in "${VALUE_PATTERNS[@]}"; do
+    MATCHES=$(git diff --cached --diff-filter=ACM -S "$PATTERN" --name-only 2>/dev/null)
+    if [ -n "$MATCHES" ]; then
+        echo "❌ BLOCKED: Potential hardcoded credential detected: $PATTERN"
+        echo "   Files: $MATCHES"
+        FOUND=1
+    fi
+done
+
+# Check for .env files being committed
+ENV_FILES=$(git diff --cached --name-only | grep -E '\.env(\..+)?$' | grep -v '\.env\.example$' | grep -v '\.env\.template$')
+if [ -n "$ENV_FILES" ]; then
+    echo "❌ BLOCKED: Attempting to commit .env file(s):"
+    echo "   $ENV_FILES"
+    echo "   Add these to .gitignore instead."
+    FOUND=1
+fi
+
+if [ "$FOUND" -eq 1 ]; then
+    echo ""
+    echo "🛡️  Secret detection failed. Commit blocked."
+    echo "   Remove secrets and use environment variables instead."
+    echo "   To bypass (NOT recommended): git commit --no-verify"
+    exit 1
+fi
+
+echo "✅ No secrets detected. Proceeding with commit."
+exit 0

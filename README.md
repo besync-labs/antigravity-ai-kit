@@ -1,9 +1,9 @@
 # 🚀 Antigravity AI Kit
 
-![version](https://img.shields.io/badge/version-2.0.0-blue)
+![version](https://img.shields.io/badge/version-2.1.0-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![AI Agents](https://img.shields.io/badge/AI%20Agents-17-purple)
-![Skills](https://img.shields.io/badge/Skills-26-orange)
+![AI Agents](https://img.shields.io/badge/AI%20Agents-19-purple)
+![Skills](https://img.shields.io/badge/Skills-27-orange)
 ![Commands](https://img.shields.io/badge/Commands-31-red)
 ![Workflows](https://img.shields.io/badge/Workflows-11-teal)
 ![Checklists](https://img.shields.io/badge/Checklists-3-yellow)
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  Antigravity AI Kit is a <b>Trust-Grade AI development framework</b> that brings <b>17 specialized agents</b>, <b>31 commands</b>, <b>26 skills</b>, and <b>11 workflows</b> to help you code 10x faster with governance-first principles.
+  Antigravity AI Kit is a <b>Trust-Grade AI development framework</b> that brings <b>19 specialized agents</b>, <b>31 commands</b>, <b>27 skills</b>, and <b>11 workflows</b> to help you code 10x faster with governance-first principles.
 </p>
 
 <p align="center">
@@ -50,8 +50,8 @@
 
 | Feature           | Count | Description                                                            |
 | :---------------- | :---- | :--------------------------------------------------------------------- |
-| 🤖 **AI Agents**  | 17    | Specialized roles (Mobile, DevOps, Database, Security, Performance...) |
-| 🛠️ **Skills**     | 26    | Domain knowledge modules (API, Testing, Architecture, Docker...)       |
+| 🤖 **AI Agents**  | 19    | Specialized roles (Mobile, DevOps, Database, Security, Performance...) |
+| 🛠️ **Skills**     | 27    | Domain knowledge modules (API, Testing, Architecture, Docker...)       |
 | ⌨️ **Commands**   | 31    | Slash commands for every development workflow                          |
 | 🔄 **Workflows**  | 11    | Process templates (/create, /debug, /deploy, /test...)                 |
 | ✅ **Checklists** | 3     | Quality gates (session-start, session-end, pre-commit)                 |
@@ -79,7 +79,7 @@
 ### Option 1: NPX (Recommended)
 
 ```bash
-npx @emredursun/antigravity-ai-kit init
+npx antigravity-ai-kit init
 ```
 
 This automatically copies the `.agent/` folder to your project.
@@ -175,6 +175,10 @@ That's it! The kit is now active and ready to accelerate your development.
 | **Documentation Writer** | Docs, READMEs, guides      | documentation, readme |
 | **Debugger**             | Systematic debugging       | debug, error, fix     |
 | **Refactorer**           | Code cleanup, optimization | refactor, cleanup     |
+| **Frontend Specialist**  | React, Next.js, UI architecture | frontend, component, CSS |
+| **Backend Specialist**   | Node.js, NestJS, API design | backend, API, server  |
+| **Sprint Orchestrator**  | Sprint planning, velocity tracking | sprint, roadmap, velocity |
+| **Reliability Engineer** | SRE, production readiness | reliability, SLA, monitoring |
 
 ---
 
@@ -248,7 +252,7 @@ That's it! The kit is now active and ready to accelerate your development.
 
 ---
 
-## 🛠️ Skills (26)
+## 🛠️ Skills (27)
 
 ### Operational Skills (4)
 
@@ -568,7 +572,7 @@ MIT License — See [LICENSE](LICENSE) for details.
 - Context-driven development from [Google Conductor](https://developers.googleblog.com/en/conductor-introducing-context-driven-development-for-gemini-cli/)
 - Hook concepts from [everything-claude-code](https://github.com/affaan-m/everything-claude-code)
 
-_Antigravity AI Kit v2.0.0 extends these foundations with Trust-Grade governance, session management, and 66+ capabilities._
+_Antigravity AI Kit v2.1.0 extends these foundations with Trust-Grade governance, session management, and 90+ capabilities._
 
 ---
 

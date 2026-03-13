@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "1.0.0",
+  "currentPhase": "IDLE",
+  "startedAt": null,
+  "phases": {
+    "EXPLORE": {
+      "status": "pending",
+      "description": "Codebase discovery and requirement analysis",
+      "agent": "explorer-agent",
+      "artifact": null,
+      "startedAt": null,
+      "completedAt": null
+    },
+    "PLAN": {
+      "status": "pending",
+      "description": "Structured task breakdown with Socratic gate",
+      "agent": "planner",
+      "artifact": null,
+      "startedAt": null,
+      "completedAt": null,
+      "requiresApproval": true
+    },
+    "IMPLEMENT": {
+      "status": "pending",
+      "description": "Code implementation following the approved plan",
+      "agent": null,
+      "artifact": null,
+      "startedAt": null,
+      "completedAt": null
+    },
+    "VERIFY": {
+      "status": "pending",
+      "description": "Quality gates, tests, and build verification",
+      "agent": "tdd-guide",
+      "skill": "verification-loop",
+      "artifact": null,
+      "startedAt": null,
+      "completedAt": null
+    },
+    "REVIEW": {
+      "status": "pending",
+      "description": "Code review and security audit",
+      "agent": "code-reviewer",
+      "artifact": null,
+      "startedAt": null,
+      "completedAt": null
+    },
+    "DEPLOY": {
+      "status": "pending",
+      "description": "Production deployment with pre-flight checks",
+      "workflow": "deploy",
+      "artifact": null,
+      "startedAt": null,
+      "completedAt": null
+    }
+  },
+  "transitions": [
+    {
+      "from": "IDLE",
+      "to": "EXPLORE",
+      "trigger": "New task started",
+      "guard": "No active workflow in progress"
+    },
+    {
+      "from": "IDLE",
+      "to": "PLAN",
+      "trigger": "Task with known requirements",
+      "guard": "Requirements are clear"
+    },
+    {
+      "from": "EXPLORE",
+      "to": "PLAN",
+      "trigger": "Discovery complete",
+      "guard": "Exploration artifact exists"
+    },
+    {
+      "from": "PLAN",
+      "to": "IMPLEMENT",
+      "trigger": "Plan approved",
+      "guard": "Plan approved by user (explicit yes/approval)"
+    },
+    {
+      "from": "IMPLEMENT",
+      "to": "VERIFY",
+      "trigger": "Implementation complete",
+      "guard": "All plan items marked complete"
+    },
+    {
+      "from": "VERIFY",
+      "to": "REVIEW",
+      "trigger": "Quality gates pass",
+      "guard": "All quality gates pass (build, lint, test)"
+    },
+    {
+      "from": "VERIFY",
+      "to": "IMPLEMENT",
+      "trigger": "Quality gates fail",
+      "guard": "One or more quality gates failed"
+    },
+    {
+      "from": "REVIEW",
+      "to": "DEPLOY",
+      "trigger": "Review approved",
+      "guard": "No critical findings remain"
+    },
+    {
+      "from": "REVIEW",
+      "to": "IMPLEMENT",
+      "trigger": "Review requires changes",
+      "guard": "Critical findings require code changes"
+    },
+    {
+      "from": "DEPLOY",
+      "to": "IDLE",
+      "trigger": "Deployment complete",
+      "guard": "Health check passes"
+    }
+  ],
+  "history": []
+}

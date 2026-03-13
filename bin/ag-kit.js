@@ -14,7 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const VERSION = '2.0.0';
+const VERSION = '2.1.0';
 const AGENT_FOLDER = '.agent';
 
 // ANSI colors
@@ -47,9 +47,9 @@ ${colors.bright}${colors.blue}
         \\/     \\/        /_____/            \\/                \\/     
 ${colors.reset}
 ${colors.green}🚀 Antigravity AI Kit v${VERSION}${colors.reset}
-${colors.yellow}   Transform Your IDE into an AI Engineering Team${colors.reset}
+${colors.yellow}   Transform Your IDE into an Autonomous Engineering Team${colors.reset}
 
-   • 17 AI Agents    • 26 Skills
+   • 19 AI Agents    • 27 Skills
    • 31 Commands     • 11 Workflows
 `);
 }
@@ -71,7 +71,7 @@ ${colors.bright}Options:${colors.reset}
   --dry-run                 Preview actions without executing
 
 ${colors.bright}Examples:${colors.reset}
-  npx @emredursun/antigravity-ai-kit init
+  npx antigravity-ai-kit init
   ag-kit init --force
   ag-kit init --path ./my-project
 `);
@@ -113,6 +113,14 @@ function initCommand(options) {
   const agentPath = path.join(targetDir, AGENT_FOLDER);
   const sourcePath = path.join(__dirname, '..', AGENT_FOLDER);
   
+  // Verify source .agent folder exists
+  if (!fs.existsSync(sourcePath)) {
+    log(`\n❌ Source .agent folder not found at: ${sourcePath}`, 'red');
+    log('   The package may be corrupted. Try reinstalling:', 'yellow');
+    log('   npm install -g antigravity-ai-kit\n', 'yellow');
+    process.exit(1);
+  }
+
   if (!options.quiet) {
     showBanner();
   }
@@ -166,7 +174,7 @@ ${colors.bright}Quick start:${colors.reset}
   ${colors.cyan}/implement${colors.reset}  Execute the plan
   ${colors.cyan}/verify${colors.reset}     Run quality gates
 
-${colors.yellow}📚 Documentation: https://github.com/emredursun/antigravity-ai-kit${colors.reset}
+${colors.yellow}📚 Documentation: https://github.com/besync-labs/antigravity-ai-kit${colors.reset}
 `);
   }
 }
@@ -219,7 +227,11 @@ switch (command) {
     statusCommand();
     break;
   case 'update':
-    log('🔄 Update not yet implemented - reinstall with: npx @emredursun/antigravity-ai-kit init --force', 'yellow');
+    log('🔄 Update not yet implemented - reinstall with: npx antigravity-ai-kit init --force', 'yellow');
+    break;
+  case 'verify':
+    log('🔒 Manifest verification - coming in v2.2.0', 'cyan');
+    log('   This will validate the integrity of all .agent/ files\n', 'cyan');
     break;
   case '--version':
   case '-v':

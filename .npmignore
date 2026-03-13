@@ -1,0 +1,26 @@
+# NPM Publish Exclusions
+# Only ship bin/ and .agent/ (as defined in package.json "files" field)
+# This file provides an additional safety net
+
+# Documentation site
+docs/
+mkdocs.yml
+
+# Examples (available via GitHub, not needed in npm package)
+examples/
+
+# Development tooling
+scripts/
+tests/
+.github/
+.cursor/
+.git/
+
+# Configuration files
+vitest.config.js
+.markdownlint.json
+.editorconfig
+
+# Contribution docs (available via GitHub)
+CONTRIBUTING.md
+CHANGELOG.md

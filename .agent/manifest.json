@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0.0",
+  "kitVersion": "2.1.0",
+  "description": "Antigravity AI Kit — Trust-Grade AI Development Framework",
+  "repository": "https://github.com/besync-labs/antigravity-ai-kit",
+  "capabilities": {
+    "agents": {
+      "count": 19,
+      "items": [
+        { "name": "architect", "file": "agents/architect.md", "domain": "System design, DDD, Hexagonal" },
+        { "name": "backend-specialist", "file": "agents/backend-specialist.md", "domain": "Node.js, NestJS, API design" },
+        { "name": "build-error-resolver", "file": "agents/build-error-resolver.md", "domain": "Rapid build fixes" },
+        { "name": "code-reviewer", "file": "agents/code-reviewer.md", "domain": "Quality + security review" },
+        { "name": "database-architect", "file": "agents/database-architect.md", "domain": "Schema, queries, optimization" },
+        { "name": "devops-engineer", "file": "agents/devops-engineer.md", "domain": "CI/CD, Docker, deployment" },
+        { "name": "doc-updater", "file": "agents/doc-updater.md", "domain": "Documentation sync" },
+        { "name": "e2e-runner", "file": "agents/e2e-runner.md", "domain": "End-to-end testing" },
+        { "name": "explorer-agent", "file": "agents/explorer-agent.md", "domain": "Codebase discovery" },
+        { "name": "frontend-specialist", "file": "agents/frontend-specialist.md", "domain": "React, Next.js, UI architecture" },
+        { "name": "knowledge-agent", "file": "agents/knowledge-agent.md", "domain": "RAG retrieval" },
+        { "name": "mobile-developer", "file": "agents/mobile-developer.md", "domain": "React Native, Expo" },
+        { "name": "performance-optimizer", "file": "agents/performance-optimizer.md", "domain": "Core Web Vitals" },
+        { "name": "planner", "file": "agents/planner.md", "domain": "Task breakdown, Socratic analysis" },
+        { "name": "refactor-cleaner", "file": "agents/refactor-cleaner.md", "domain": "Dead code cleanup" },
+        { "name": "reliability-engineer", "file": "agents/reliability-engineer.md", "domain": "SRE, production readiness" },
+        { "name": "security-reviewer", "file": "agents/security-reviewer.md", "domain": "Vulnerability analysis" },
+        { "name": "sprint-orchestrator", "file": "agents/sprint-orchestrator.md", "domain": "Sprint planning, velocity" },
+        { "name": "tdd-guide", "file": "agents/tdd-guide.md", "domain": "Test-first enforcement" }
+      ]
+    },
+    "commands": {
+      "count": 31,
+      "directory": "commands/"
+    },
+    "skills": {
+      "count": 27,
+      "items": [
+        { "name": "api-patterns", "directory": "skills/api-patterns/" },
+        { "name": "app-builder", "directory": "skills/app-builder/" },
+        { "name": "architecture", "directory": "skills/architecture/" },
+        { "name": "behavioral-modes", "directory": "skills/behavioral-modes/" },
+        { "name": "brainstorming", "directory": "skills/brainstorming/" },
+        { "name": "clean-code", "directory": "skills/clean-code/" },
+        { "name": "context-budget", "directory": "skills/context-budget/" },
+        { "name": "continuous-learning", "directory": "skills/continuous-learning/" },
+        { "name": "database-design", "directory": "skills/database-design/" },
+        { "name": "debugging-strategies", "directory": "skills/debugging-strategies/" },
+        { "name": "deployment-procedures", "directory": "skills/deployment-procedures/" },
+        { "name": "docker-patterns", "directory": "skills/docker-patterns/" },
+        { "name": "eval-harness", "directory": "skills/eval-harness/" },
+        { "name": "frontend-patterns", "directory": "skills/frontend-patterns/" },
+        { "name": "git-workflow", "directory": "skills/git-workflow/" },
+        { "name": "intelligent-routing", "directory": "skills/intelligent-routing/" },
+        { "name": "mobile-design", "directory": "skills/mobile-design/" },
+        { "name": "nodejs-patterns", "directory": "skills/nodejs-patterns/" },
+        { "name": "parallel-agents", "directory": "skills/parallel-agents/" },
+        { "name": "performance-profiling", "directory": "skills/performance-profiling/" },
+        { "name": "plan-writing", "directory": "skills/plan-writing/" },
+        { "name": "security-practices", "directory": "skills/security-practices/" },
+        { "name": "strategic-compact", "directory": "skills/strategic-compact/" },
+        { "name": "testing-patterns", "directory": "skills/testing-patterns/" },
+        { "name": "typescript-expert", "directory": "skills/typescript-expert/" },
+        { "name": "verification-loop", "directory": "skills/verification-loop/" },
+        { "name": "webapp-testing", "directory": "skills/webapp-testing/" }
+      ]
+    },
+    "workflows": {
+      "count": 11,
+      "items": [
+        { "name": "brainstorm", "file": "workflows/brainstorm.md" },
+        { "name": "create", "file": "workflows/create.md" },
+        { "name": "debug", "file": "workflows/debug.md" },
+        { "name": "deploy", "file": "workflows/deploy.md" },
+        { "name": "enhance", "file": "workflows/enhance.md" },
+        { "name": "orchestrate", "file": "workflows/orchestrate.md" },
+        { "name": "plan", "file": "workflows/plan.md" },
+        { "name": "preview", "file": "workflows/preview.md" },
+        { "name": "status", "file": "workflows/status.md" },
+        { "name": "test", "file": "workflows/test.md" },
+        { "name": "ui-ux-pro-max", "file": "workflows/ui-ux-pro-max.md" }
+      ]
+    }
+  }
+}

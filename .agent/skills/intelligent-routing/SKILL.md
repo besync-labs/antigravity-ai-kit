@@ -131,9 +131,9 @@ I will review the authentication implementation with the following focus:
 
 ### Rule 3: Trust-Grade Context
 
-**Always apply BeSync governance context:**
+**Always apply project governance context:**
 
-- Load relevant Meta-Directives
+- Load relevant governance rules
 - Apply session state context
 - Enforce pre-task checklists
 
@@ -149,7 +149,7 @@ User: "Use @architect to review this"
 
 ---
 
-## Integration with BeSync Governance
+## Integration with Project Governance
 
 ### With Session State
 
@@ -157,11 +157,11 @@ User: "Use @architect to review this"
 - Inherit project-specific configurations
 - Maintain Trust-Grade continuity
 
-### With Meta-Directives
+### With Governance Rules
 
 - Apply relevant governance rules
 - Enforce professional standards
-- Maintain BeSync architecture alignment
+- Maintain project architecture alignment
 
 ### With Checklists
 

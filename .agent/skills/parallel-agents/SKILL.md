@@ -11,7 +11,7 @@ allowed-tools: Read, Glob, Grep
 
 ## Overview
 
-This skill enables coordinating multiple specialized agents for complex tasks. Unlike external scripts, this approach keeps all orchestration within Antigravity's control while applying BeSync governance protocols.
+This skill enables coordinating multiple specialized agents for complex tasks. Unlike external scripts, this approach keeps all orchestration within the kit's control while applying Trust-Grade governance protocols.
 
 ---
 
@@ -67,7 +67,7 @@ Resume agent [agentId] and continue with additional requirements.
 
 ## Orchestration Patterns
 
-### Pattern 1: Feature Vertical (BeSync Standard)
+### Pattern 1: Feature Vertical (Trust-Grade Standard)
 
 ```
 Agents: planner → architect → [domain-agents] → tdd-guide → e2e-runner

@@ -1,33 +1,81 @@
 {
-  "schemaVersion": "1.0",
-  "description": "Event-driven automation hooks for Antigravity AI Kit",
-  
+  "schemaVersion": "1.1.0",
   "hooks": [
     {
-      "name": "session-start",
-      "trigger": "SessionStart",
-      "description": "Load session context at start",
-      "action": "Load session-state.json and rules.md"
+      "event": "session-start",
+      "description": "Executed at the beginning of every AI session",
+      "enforcement": "runtime",
+      "actions": [
+        "Load session-context.md and session-state.json",
+        "Read engine/loading-rules.json for context budget",
+        "Read engine/workflow-state.json for lifecycle phase",
+        "Verify git status is clean or understood",
+        "Load domain-relevant agents and skills via loading-rules.json",
+        "Present session state to user before proceeding"
+      ]
     },
     {
-      "name": "session-end", 
-      "trigger": "SessionEnd",
-      "description": "Save session state before exit",
-      "action": "Update session-state.json with current context"
+      "event": "session-end",
+      "description": "Executed at the end of every AI session",
+      "enforcement": "runtime",
+      "actions": [
+        "Update session-context.md with handoff notes",
+        "Update session-state.json with metadata",
+        "Update engine/workflow-state.json with phase progress",
+        "Trigger continuous-learning skill for pattern extraction",
+        "Update docs/ROADMAP.md if sprint items changed",
+        "Commit tracking files together"
+      ]
     },
     {
-      "name": "pre-commit",
-      "trigger": "PreToolUse",
-      "matcher": "tool == 'GitCommit'",
-      "description": "Run verification before commits",
-      "action": "Execute verification-loop skill"
+      "event": "pre-commit",
+      "description": "Verification before any git commit",
+      "enforcement": "runtime",
+      "actions": [
+        "Verify build passes (npm run build)",
+        "Verify lint passes (npm run lint)",
+        "Verify tests pass (npm test)",
+        "Check for console.log statements in production code",
+        "Verify no TypeScript errors (npx tsc --noEmit)"
+      ]
     },
     {
-      "name": "secret-detection",
-      "trigger": "PostToolUse",
-      "matcher": "tool == 'Write' && content matches 'sk-|api_key|password'",
-      "description": "Block commits with exposed secrets",
-      "action": "BLOCK and alert"
+      "event": "secret-detection",
+      "description": "Scan for accidentally committed secrets",
+      "enforcement": "git-hook",
+      "referenceScript": ".githooks/pre-commit",
+      "patterns": [
+        "sk-[a-zA-Z0-9]{20,}",
+        "AKIA[A-Z0-9]{16}",
+        "api_key\\s*=\\s*['\"][^'\"]+",
+        "password\\s*=\\s*['\"][^'\"]+",
+        "AWS_SECRET_ACCESS_KEY",
+        "PRIVATE_KEY",
+        "ghp_[a-zA-Z0-9]{36}",
+        "gho_[a-zA-Z0-9]{36}"
+      ]
+    },
+    {
+      "event": "phase-transition",
+      "description": "Triggered when workflow lifecycle phase changes",
+      "enforcement": "runtime",
+      "actions": [
+        "Validate transition guard from engine/workflow-state.json",
+        "Record transition in workflow-state.json history",
+        "Load/unload agents appropriate for new phase",
+        "Notify user of phase change with next suggested action"
+      ]
+    },
+    {
+      "event": "sprint-checkpoint",
+      "description": "Triggered at sprint boundaries for health assessment",
+      "enforcement": "runtime",
+      "actions": [
+        "Sprint orchestrator generates health report",
+        "Review velocity metrics against plan",
+        "Identify carry-over candidates",
+        "Produce sprint retrospective if ending"
+      ]
     }
   ]
 }

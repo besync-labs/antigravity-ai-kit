@@ -287,7 +287,7 @@ Each mode inherits Trust-Grade governance:
 
 | Mode       | Governance Focus                               |
 | ---------- | ---------------------------------------------- |
-| BRAINSTORM | Load Meta-Directives, consider constraints     |
+| BRAINSTORM | Load governance rules, consider constraints     |
 | IMPLEMENT  | Apply clean-code, follow architecture patterns |
 | DEBUG      | Use systematic-debugging, document root causes |
 | REVIEW     | Apply security standards, check compliance     |
