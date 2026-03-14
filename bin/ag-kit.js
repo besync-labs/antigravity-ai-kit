@@ -4,7 +4,7 @@
  * Antigravity AI Kit CLI
  * 
  * Usage:
- *   npx @emredursun/antigravity-ai-kit init
+ *   npx antigravity-ai-kit init
  *   ag-kit init [options]
  * 
  * @author Emre Dursun
@@ -181,6 +181,10 @@ ${colors.bright}Next steps:${colors.reset}
   1. Open your project in an AI-powered IDE
   2. Run ${colors.cyan}/status${colors.reset} to verify
   3. Use ${colors.cyan}/help${colors.reset} to see available commands
+
+${colors.bright}Validate your installation:${colors.reset}
+  ${colors.cyan}ag-kit verify${colors.reset}   Manifest integrity check
+  ${colors.cyan}ag-kit scan${colors.reset}     Security scan
 
 ${colors.bright}Quick start:${colors.reset}
   ${colors.cyan}/plan${colors.reset}       Create implementation plan

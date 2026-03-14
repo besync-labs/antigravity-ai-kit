@@ -41,6 +41,19 @@ cp -r antigravity-ai-kit/.agent/ your-project/.agent/
 
 ---
 
+## ✅ Verify Installation
+
+After installing, validate your setup with the built-in CLI checks:
+
+```bash
+ag-kit verify     # Manifest integrity check
+ag-kit scan       # Security scan
+```
+
+Both should return clean results. If they report issues, try reinstalling with `--force`.
+
+---
+
 ## First Session
 
 1. Open your project in your AI-powered IDE (VS Code, Cursor, Windsurf, etc.)
