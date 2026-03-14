@@ -5,6 +5,52 @@ All notable changes to Antigravity AI Kit will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] — 2026-03-14
+
+### Added
+
+#### Runtime Engine (21 modules — zero external dependencies)
+- **Phase 1 — Foundation**: `workflow-engine`, `session-manager`, `verify`, `updater`, `error-budget`
+- **Phase 2 — Runtime**: `workflow-persistence`, `agent-registry`, `loading-engine`, `hook-system`, `task-model`
+- **Phase 3 — Collaboration**: `identity`, `task-governance`, `skill-sandbox`, `conflict-detector`, `security-scanner`, `plugin-system`
+- **Phase 4 — Platform**: `agent-reputation`, `engineering-manager`, `self-healing`, `marketplace`, `cli-commands`
+
+#### Skills (31 total, +4 new)
+- `i18n-localization` — Internationalization and localization patterns
+- `shell-conventions` — PowerShell shell conventions for Windows
+- `context-budget` — Active token budget management (promoted from v2.1.0)
+- `mcp-integration` — Model Context Protocol server integration (promoted from v2.1.0)
+
+#### Workflows (14 total, +3 new)
+- `quality-gate` — Pre-task research and validation protocol
+- `retrospective` — Tier-1 sprint audit and review
+- `review` — Sequential quality gate pipeline (lint, types, tests, security, build)
+
+#### CLI Commands
+- `ag-kit verify` — Manifest integrity verification (90 checks)
+- `ag-kit scan` — Enhanced security scanning (injection, secrets, leakage detection)
+- `ag-kit update` — Diff-based update with preserved user files
+- `ag-kit heal` — CI failure detection and JSON patch generation
+- `ag-kit plugin list|install|remove` — Full plugin lifecycle management
+- `ag-kit market search|info|install` — Community skill marketplace
+
+#### Test Suite (261 tests, +218 from v2.1.0)
+- 21 unit test files for all runtime modules
+- Structural integrity tests (filesystem ↔ manifest validation)
+- Schema validation tests (JSON + YAML frontmatter)
+- Security scan tests (injection detection, secret scanning, leakage)
+
+#### Documentation
+- Contributor Guide — end-to-end project lifecycle
+- Verify Installation section in Getting Started and README
+- MkDocs site with full capability index pages
+
+### Changed
+- Version: `2.1.0` → `3.0.0` (major: runtime engine, breaking CLI additions)
+- Description updated to reflect 21-module runtime engine and 261 tests
+- CLI init success message now includes `ag-kit verify` and `ag-kit scan` guidance
+- Fixed scoped package name reference in JSDoc header (`@emredursun/` → unscoped)
+
 ## [2.1.0] — 2026-03-13
 
 ### Added
@@ -67,5 +113,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Session management architecture
 - PAAL continuous learning cycle
 
+[3.0.0]: https://github.com/besync-labs/antigravity-ai-kit/compare/v2.1.0...v3.0.0
 [2.1.0]: https://github.com/besync-labs/antigravity-ai-kit/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/besync-labs/antigravity-ai-kit/releases/tag/v2.0.0
