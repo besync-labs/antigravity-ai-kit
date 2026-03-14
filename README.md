@@ -117,6 +117,13 @@ cp -r antigravity-ai-kit/.agent/ your-project/.agent/
 
 That's it! The kit is now active and ready to accelerate your development.
 
+### ✅ Verify Installation
+
+```bash
+ag-kit verify     # Manifest integrity check
+ag-kit scan       # Security scan
+```
+
 ---
 
 ## 🏗️ Architecture Overview
