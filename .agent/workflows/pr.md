@@ -52,7 +52,7 @@ commit-types: [feat, fix, refactor, perf, chore, docs, test]
 
 | Command | Action |
 | :---------------------- | :--------------------------------------------------- |
-| `/pr` | Create PR targeting default branch (`main`) |
+| `/pr` | Create PR targeting integration branch (`dev` if GitFlow, `main` if trunk-based) |
 | `/pr [target]` | Create PR targeting specified branch (e.g., `/pr dev`) |
 | `/pr --draft` | Create PR as draft (may not trigger CI) |
 | `/pr --draft [target]` | Create draft PR targeting specified branch |
